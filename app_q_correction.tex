@@ -1,0 +1,121 @@
+% ===========================================================================
+\section{Quality factor correction for hybrid-material cavities}\label{app:Qcorrection}
+% ===========================================================================
+
+Every cavity in this work mixes materials. Some carry a superconducting film on part of their surface and bare copper on the rest, and all of them leak RF at a mechanical seam. This appendix gives the method used to extract the intrinsic surface resistance of the coating from such a measurement, and to project two idealised cases: a cavity coated on every surface, and a cavity with no seam loss.
+
+\subsection{General framework}
+
+For a resonant cavity the quality factor relates surface resistance to geometry,
+
+\begin{equation}
+Q_0 = \frac{G}{R_s},
+\label{eq:Q_basic}
+\end{equation}
+
+where $G$ is the geometric factor in ohms. With several distinct surfaces the losses add,
+
+\begin{equation}
+\frac{1}{Q_\text{total}} = \sum_{i} \frac{R_{s,i}}{G_i}.
+\label{eq:Q_multisurf}
+\end{equation}
+
+\subsection{Surface-specific geometric factors}
+
+The geometric factor of surface $i$ is
+
+\begin{equation}
+G_i = \frac{\int_V |\mu \vec{H}|^2\, dV}{\int_{S_i} |\vec{H}_\text{tan}|^2\, dS},
+\label{eq:G_definition}
+\end{equation}
+
+with the stored magnetic energy in the numerator and the tangential field integrated over surface $i$ in the denominator. Real cavity shapes and boundary conditions rule out analytic solutions, so $G_i$ is computed numerically in COMSOL Multiphysics:
+
+\begin{enumerate}
+    \item Model the geometry with perfectly conducting walls.
+    \item Solve for the mode of interest (TM$_{010}$ throughout this work).
+    \item Extract the magnetic energy $U_m = \int_V \tfrac{1}{2}\mu|\vec{H}|^2 dV$.
+    \item Integrate the tangential field over each surface, $I_i = \int_{S_i} |\vec{H}_\text{tan}|^2 dS$.
+    \item Evaluate $G_i = 2U_m / I_i$.
+\end{enumerate}
+
+Surfaces sharing a material are grouped. If all six walls are one material (group A) and both endcaps another (group B), the effective factors are
+
+\begin{equation}
+\frac{1}{G_\text{A}} = \sum_{i \in A} \frac{1}{G_i}, \qquad \frac{1}{G_\text{B}} = \sum_{i \in B} \frac{1}{G_i}.
+\label{eq:G_grouped}
+\end{equation}
+
+\subsection{Correction 1: multiple materials}
+
+Take a cavity with copper of known $R_{s,\text{Cu}}$ on some surfaces and an unknown coating on the rest. The measured quality factor is
+
+\begin{equation}
+    \frac{1}{Q_\text{measured}} = \frac{R_{s,\text{Cu}}}{G_\text{Cu}} + \frac{R_{s,\text{film}}}{G_\text{film}}.
+    \label{eq:Q_hybrid}
+\end{equation}
+
+The copper term comes from a separate all-copper measurement of the same body,
+
+\begin{equation}
+R_{s,\text{Cu}} = \frac{G_\text{total}}{Q_\text{Cu,measured}},
+\label{eq:Rs_Cu}
+\end{equation}
+
+where $G_\text{total}$ is the geometric factor for a uniform cavity. Solving Eq.~\ref{eq:Q_hybrid} for the film,
+
+\begin{equation}
+R_{s,\text{film}} = G_\text{film} \left(\frac{1}{Q_\text{measured}} - \frac{R_{s,\text{Cu}}}{G_\text{Cu}}\right),
+\label{eq:Rs_film}
+\end{equation}
+
+and the fully coated cavity would give
+
+\begin{equation}
+Q_\text{film,full} = \frac{G_\text{total}}{R_{s,\text{film}}}.
+\label{eq:Q_full}
+\end{equation}
+
+\subsection{Correction 2: RF leakage at seams}\label{sec:QRFleakage}
+
+Multi-piece cavities leak at their mechanical joints, pulling the measured $Q$ below the material limit. Copper serves as its own reference for this,
+
+\begin{equation}
+\alpha = \frac{Q_\text{Cu,ideal}}{Q_\text{Cu,measured}},
+\label{eq:alpha_Cu}
+\end{equation}
+
+with $Q_\text{Cu,ideal}$ taken from simulation of the same geometry with perfect contact. Assuming the same fractional leakage applies when the cavity is coated --- the assembly procedure is unchanged --- the corrected value is
+
+\begin{equation}
+Q_\text{film,corrected} = \alpha \times Q_\text{film,full}.
+\label{eq:Q_corrected}
+\end{equation}
+
+\subsection{Combined procedure}
+
+\begin{enumerate}
+    \item Compute $G_i$ for each surface by finite-element simulation.
+    \item Group them into $G_\text{Cu}$, $G_\text{film}$, and $G_\text{total}$ via Eq.~\ref{eq:G_grouped}.
+    \item Measure $Q_\text{Cu,measured}$ on the all-copper cavity.
+    \item Obtain $R_{s,\text{Cu}}$ from Eq.~\ref{eq:Rs_Cu}.
+    \item Measure $Q_\text{measured}$ on the coated cavity.
+    \item Extract $R_{s,\text{film}}$ from Eq.~\ref{eq:Rs_film}.
+    \item Compute $Q_\text{film,full}$ from Eq.~\ref{eq:Q_full}.
+    \item Obtain $\alpha$ from Eq.~\ref{eq:alpha_Cu}.
+    \item Apply Eq.~\ref{eq:Q_corrected}.
+\end{enumerate}
+
+\subsection{Assumptions and their consequences}
+
+The corrected quality factor is only as good as five assumptions, each of which carries uncertainty into the result:
+
+\begin{itemize}
+    \item Simulated geometric factors describe the real cavity.
+    \item The coated fraction of the surface is known. For the two-piece hexagonal cavity this was estimated visually at one third, which is the largest single uncertainty in that result.
+    \item The reference copper surface resistance is measured on the same body, in the same assembly state.
+    \item Seam leakage is material-independent, so that $\alpha$ measured on copper transfers to the coating.
+    \item Current distributions are similar for both materials, so that grouping surfaces by material remains valid.
+\end{itemize}
+
+The single-wall eight-piece cavity strains the second and fifth assumptions hardest, because one wall out of eight surfaces is a small participation fraction and any error in the copper reference is amplified when it is subtracted.

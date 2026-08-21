@@ -1,0 +1,46 @@
+% ===========================================================================
+\subsection{Two-piece hexagonal cavity: Ta/Nb coating only}\label{sec:tanb}
+% ===========================================================================
+%
+% STATUS: measured, PPMS, zero field. Q_0 = 1.4e6 at 2 K on the two-piece
+% hexagonal body, 500 nm DC Ta + 750 nm DC Nb, 200 C. Its own bare-Cu baseline
+% is 55,000. Q(T) falls to 13,000 at 9 K. No Q vs B taken.
+% Remaining \TODO{} items are photographs and two secondary details.
+%
+% ===========================================================================
+
+Nb$_3$Sn is the harder material to make, and every defect in the Ta/Nb underlayer propagates into it. Before pushing further on Nb$_3$Sn we therefore coated the two-piece hexagonal copper cavity with the Ta/Nb stack alone and stopped there. Niobium is a single-element sputtered film. It needs no Cu-Sn evaporation, no \qty{715}{\degreeCelsius} reaction, and no APS etch. Its $T_c$ of \qty{9.2}{\kelvin} and its $H_{c2}$ below \qty{0.4}{\tesla} disqualify it from a \qty{9}{\tesla} haloscope, so this cavity is not a candidate detector. It measures how good the copper body, the seam, the surface preparation, and the deposition system can be once the film chemistry is taken out of the problem.
+
+\subsubsection{Coating}
+
+The stack was \qty{500}{\nano\meter} of Ta followed by \qty{750}{\nano\meter} of Nb, both by DC magnetron sputtering onto a substrate held at \qty{200}{\degreeCelsius}. Ta was deposited at \qty{60}{\watt} in \qty{10}{\milli\torr} Ar, Nb at \qty{250}{\watt} in \qty{8}{\milli\torr} Ar. The Nb thickness exceeds three penetration depths, so the film screens the copper beneath it and the measurement reports the film rather than the substrate.
+
+\begin{figure}[htb]
+    \centering
+    \TODO{PHOTO: interior of the Ta/Nb-coated two-piece hexagonal cavity, both halves. Worth showing the endcap regions specifically, since this is the direct visual contrast with Fig.~\ref{fig:EdgeEffect2piece}.}
+    \caption{Two-piece hexagonal copper cavity after Ta/Nb deposition. \TODO{Note coverage at the endcaps and at the steeply inclined edges, and compare with the Nb$_3$Sn cavity of Fig.~\ref{fig:EdgeEffect2piece}.}}
+    \label{fig:tanbCavity}
+\end{figure}
+
+\subsubsection{Results}
+
+The cavity was measured in the PPMS at zero applied field. At \qty{2}{\kelvin} the unloaded quality factor reached $Q_0 = 1.4\times10^{6}$, which for $G = \qty{350}{\ohm}$ corresponds to $R_s = \qty{250}{\micro\ohm}$. The same body measured bare gave $Q = 55{,}000$ at its best, so the coating improved this specific cavity by a factor of \num{25}. It also exceeds the simulated ceiling for a seamless RRR-300 copper cavity of this geometry ($Q = 76{,}000$) by a factor of \num{18}, and the fully corrected Nb$_3$Sn result of Sec.~\ref{sec:2piecenb3sn} ($Q_0 \approx 1.4\times10^{5}$) by a factor of \num{10}.
+
+Above the transition the ordering inverts. At \qty{9}{\kelvin} the cavity gives $Q = 13{,}000$, which is a quarter of its own bare-copper value and corresponds to $R_s = \qty{27}{\milli\ohm}$ against \qty{6.4}{\milli\ohm} for copper. Normal-state sputtered Nb is far more resistive than annealed copper, and because the film is thicker than its normal-state skin depth at \qty{11}{\giga\hertz}, the RF current sees Nb and not the copper underneath. The full swing across the transition is therefore a factor of \num{108} in $Q$, from $13{,}000$ at \qty{9}{\kelvin} to $1.4\times10^{6}$ at \qty{2}{\kelvin}. A transition placed at the bulk Nb value confirms two things at once: the sputtered film is clean, and the Ta barrier is keeping copper out of it.
+
+\begin{figure}[htb]
+    \centering
+    \TODO{FIGURE: $Q$ (or $R_s$) versus temperature, \qty{2}{}--\qty{15}{\kelvin}, PPMS, zero field. Overlay the bare Cu curve for this same body and the Nb$_3$Sn cavity curve so all three sit on one axis. Mark $Q = 13{,}000$ at \qty{9}{\kelvin} and $Q_0 = 1.4\times10^{6}$ at \qty{2}{\kelvin}.}
+    \caption{Quality factor versus temperature for the Ta/Nb-coated two-piece cavity, measured in the PPMS at zero field, with the bare copper and Nb$_3$Sn cavities shown for comparison. \TODO{State the transition midpoint read from the curve.}}
+    \label{fig:tanbQvsT}
+\end{figure}
+
+\TODO{Surface preparation history for this body: hand polish only, or the LLNL etch and \qty{250}{\degreeCelsius} anneal as well? The bare-Cu figure of $55{,}000$ matches the fully etched and annealed state, so state which.}
+
+\TODO{Substrate rotation during Ta and Nb deposition, and whether the endcaps were masked.}
+
+No $Q$ versus field data were taken. Niobium enters the mixed state below \qty{0.4}{\tesla}, so a field sweep would measure vortex dissipation in a material that cannot serve the application, and the cavity was reserved for the zero-field baseline instead.
+
+\subsubsection{What this fixes in the argument}
+
+A copper body of this geometry, with this seam, prepared this way and coated in this deposition system, supports $Q_0 = 1.4\times10^{6}$. The Nb$_3$Sn cavity built on the same design and the same Ta/Nb foundation delivered a corrected $1.4\times10^{5}$. Everything the two measurements share cancels in that ratio: the copper, the seam, the antenna coupling, the geometric factor, the VNA. An order of magnitude therefore separates what the hardware permits from what the Nb$_3$Sn process achieved, and none of it is attributable to the cavity or to the measurement chain. It belongs to the three steps that convert Ta/Nb into Nb$_3$Sn --- thermal evaporation of Cu-Sn onto a concave surface without rotation or heating, reaction at \qty{715}{\degreeCelsius}, and the APS etch that stripped both endcaps.

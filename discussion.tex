@@ -1,0 +1,66 @@
+% ===========================================================================
+\section{Discussion}
+% ===========================================================================
+
+\subsection{The limit is coating coverage, not Nb$_3$Sn}
+
+Table~\ref{tab:cavitysummary} collects every cavity in this work on one axis. The pattern it shows is that each generation removed one loss mechanism and exposed the next.
+
+\begin{table}[htb]
+    \centering
+    \caption{Summary of cavities. All values at zero applied field. $Q$ type ($Q_L$ or $Q_0$) is stated per entry.}
+    \label{tab:cavitysummary}
+    \begin{tabular}{llllll}
+    \toprule
+    \textbf{Cavity} & \textbf{Coating} & \textbf{Prep} & \textbf{$T$} & \textbf{$Q$} & \textbf{Limited by} \\
+    \midrule
+    8-piece hex   & bare Cu        & hand polish        & \qty{4}{\kelvin}    & $33{,}000$ ($Q_L$)   & 18 seams \\
+    8-piece hex   & 1 wall Nb$_3$Sn & hand polish       & \qty{4}{\kelvin}    & \TODO{$Q$}           & 18 seams \\
+    2-piece hex   & bare Cu        & hand polish        & \qty{4}{\kelvin}    & $35{,}000$ ($Q_L$)   & Cu surface \\
+    2-piece hex   & bare Cu        & + LLNL etch        & \qty{4}{\kelvin}    & $49{,}000$ ($Q_L$)   & Cu surface \\
+    2-piece hex   & bare Cu        & + \qty{250}{\degreeCelsius} anneal & \qty{4}{\kelvin} & $55{,}000$ ($Q_L$) & Cu surface, seam \\
+    2-piece hex   & Nb$_3$Sn       & etch + anneal      & \qty{50}{\milli\kelvin} & $77{,}000$ ($Q_L$) & bare Cu endcaps \\
+    2-piece hex   & Nb$_3$Sn (corr.)& etch + anneal     & \qty{50}{\milli\kelvin} & $1.4\times10^{5}$ ($Q_0$) & film uniformity \\
+    2-piece hex   & Ta/Nb          & \TODO{prep}        & \qty{9}{\kelvin}    & $13{,}000$ ($Q_0$)   & normal-state Nb \\
+    2-piece hex   & Ta/Nb          & \TODO{prep}        & \qty{2}{\kelvin}    & $1.4\times10^{6}$ ($Q_0$) & \TODO{} \\
+    Cylinder      & bare Cu        & electropolish      & \TODO{$T$}          & \TODO{$Q$}           & \TODO{} \\
+    Cylinder      & Nb$_3$Sn (hot bronze) & electropolish & \TODO{$T$}       & \TODO{$Q$}           & \TODO{} \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+The decisive comparison is between the Nb$_3$Sn and Ta/Nb entries, because both were measured on the two-piece hexagonal body. Ta/Nb reached $Q_0 = 1.4\times10^{6}$ at \qty{2}{\kelvin}, twenty-five times the $55{,}000$ that same body gave bare. The foundation carried through to Nb$_3$Sn reached a corrected $Q_0 = 1.4\times10^{5}$. Everything the two share --- the copper body itself, the seam, the antenna coupling, the VNA, the geometric factor --- cancels in that ratio. What remains is the three steps that separate them: thermal evaporation of Cu-Sn onto a concave surface without rotation or heating, reaction at \qty{715}{\degreeCelsius}, and the APS etch. The etch alone stripped both endcaps and returned one third of the resonating surface to copper (Fig.~\ref{fig:EdgeEffect2piece}).
+
+This reorders the improvement list. Nb$_3$Sn intrinsic properties are not the near-term obstacle at zero field, and neither is the hexagonal seam. Coverage is. Two changes address it directly: the hot-bronze route, which terminates in Nb$_3$Sn and needs no etch, and deposition fixturing that rotates or tilts the cavity so that surfaces perpendicular to the source still receive flux.
+
+\subsection{Copper surface preparation sets the floor}
+
+A superconducting coating is only worth what the copper underneath it allows. Three treatments on one two-piece hexagon moved cold $Q$ from $35{,}000$ to $49{,}000$ to $55{,}000$ without changing the geometry, the seam, or the measurement. Hand polishing to 1200 grit left \qty{36}{\percent} of the achievable $Q$ on the table, and the chemical etch recovered most of it. For comparison, Braine's cylindrical copper cavity of the same frequency reached $Q = 180{,}000$ at \qty{2}{\kelvin}~\cite{Braine:2024nzi}, three times the best copper measured here. That gap is surface finish and seam quality, not material.
+
+The hexagon cannot close it. Its acute inner corners refuse a uniform hand polish, and they present non-uniform current density to an electropolishing bath. The cylindrical cavities of Secs.~\ref{sec:cylcu} and~\ref{sec:cylnb3sn} accept a \qty{27}{\percent} seam penalty in exchange for a surface that can be finished properly, on the reasoning that a \qty{27}{\percent} loss is smaller than the loss already being paid to surface roughness.
+
+\subsection{Field dependence and vortex dissipation}\label{sec:discussion_field}
+
+The eight-piece cavity gave the only $Q(B)$ data in this work, and the result was worse than geometry predicts. $Q$ fell linearly with field, the superconducting state was lost near \qty{8}{\tesla}, and below \qty{1}{\tesla} the Nb$_3$Sn wall was more resistive than bare copper --- despite the wall lying parallel to the applied field, the orientation that Braine's NbTi measurement identified as favourable~\cite{Braine:2024nzi}.
+
+Two mechanisms account for it, and both trace to the copper substrate rather than to Nb$_3$Sn. First, CTE mismatch between Nb$_3$Sn and copper puts the film in roughly \qty{-0.9}{\percent} compressive strain on cooldown, which lowers the vortex entry field to $H_\text{entry} \approx \qty{11.4}{\milli\tesla}$~\cite{luImpactCuSn2025}. Vortices therefore enter at fields far below $H_{c1}$ and oscillate under the RF drive, dissipating through Campbell resistance. Second, film roughness on the scale of the film thickness itself ($\sim$\qty{500}{\nano\meter}) tilts the local surface normal away from the applied field. A nominally parallel wall then presents perpendicular field components over much of its area, and the vortices in those regions feel a large Lorentz force. Roughness and strain thus compound: the same rough, strained film that limits zero-field $Q$ also sets the field at which $Q$ collapses.
+
+Neither mechanism has been isolated here, because no cavity in this work carried both a well-characterised film and a field sweep. The cylindrical hot-bronze cavity of Sec.~\ref{sec:cylnb3sn} is the experiment that separates them: a smoother surface on an electropolished substrate, with $Q(B)$ measured on the same body whose copper baseline is already known.
+
+\subsection{Position among competing prototypes}
+
+Placed against the prototypes of Fig.~\ref{fig:axionprototypes}, the corrected Nb$_3$Sn result of $1.4\times10^{5}$ at zero field is comparable to thin-film NbTi and below bulk NbTi, which reaches $10^{6}$ at zero field before falling to $7.5\times10^{4}$ at \qty{9}{\tesla}~\cite{Braine:2022qal}. The CAPP REBCO cavity leads in field at $3\times10^{5}$ at \qty{9}{\tesla}, which its $H_{c2}$ above \qty{100}{\tesla} makes unsurprising~\cite{ahnSuperconductingCavityHigh2020}. The Ta/Nb result of $1.4\times10^{6}$ is competitive at zero field with any of them, and irrelevant to the application, since Nb loses superconductivity below \qty{0.4}{\tesla}.
+
+The comparison to draw is not between numbers on that plot, whose cavities span different frequencies and cannot be read directly against each other. It is that Nb$_3$Sn is the only material in the set whose $H_{c2}$ comfortably exceeds the operating field, and the only one whose measured shortfall this work attributes to a fixable process step rather than to the material.
+
+\subsection{Paths forward}
+
+Three changes follow from the results above, in order of expected gain:
+
+\begin{enumerate}
+    \item \textbf{Coat the whole surface.} Adopt the hot-bronze route so that Nb$_3$Sn is the terminal layer and no APS etch is needed, and add substrate rotation or tilt so that endcaps and steeply inclined faces receive flux. This addresses the order-of-magnitude gap identified in Sec.~\ref{sec:tanb}.
+    \item \textbf{Finish the copper properly.} Electropolish a cylindrical body and establish the baseline before coating, so that every subsequent coating is measured against the best copper the lab can make.
+    \item \textbf{Relieve the CTE strain.} A thick Nb buffer ($\geq$\qty{30}{\micro\meter}) relaxes strain before Nb$_3$Sn forms~\cite{Ilyina-Brunner:2019iay}; multilayer architectures decouple the film from substrate stress. Both target $H_\text{entry}$ and therefore the slope of $Q(B)$.
+\end{enumerate}
+
+Two diagnostics would sharpen the attribution. In-situ coupons mounted flush with the inner surface during every fabrication step, as Viklund used to map roughness inside a Nb$_3$Sn cavity~\cite{Viklund:2023nlq}, would report film morphology at positions of known deposition angle. Sectioning a measured cavity afterwards would link $Q$ to microstructure, Sn concentration, and thickness uniformity at the locations that carry the most surface current.

@@ -1,0 +1,114 @@
+\documentclass{iopjournal}
+% NOTE: references.bib uses biblatex format. Convert journaltitle->journal, date->year
+% to switch to native \bibliographystyle{iopart-num}.
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{siunitx}
+\DeclareSIUnit{\torr}{Torr}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{xcolor}
+\graphicspath{
+  {./images/}
+  {./images/AndreCavity/}
+  {./images/OtherAxionDetector/}
+  {./images/Future/}
+  {./images/intro/}
+  {./images/intro/Nb3SnProperties/}
+  {./images/Methodology/}
+  {./images/Superconductor/}
+}
+\usepackage[
+    backend=biber,
+    sorting=none,
+    doi=false,
+    url=false
+]{biblatex}
+\addbibresource{references.bib}
+
+% ---------------------------------------------------------------------------
+% Placeholder macro. Everything wrapped in \TODO{} is a value or claim that is
+% NOT yet measured or NOT yet supplied. It renders in red so it cannot reach a
+% submitted draft unnoticed. Delete the definition body to find stragglers:
+%   \renewcommand{\TODO}[1]{\errmessage{UNRESOLVED PLACEHOLDER}}
+% ---------------------------------------------------------------------------
+\newcommand{\TODO}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}
+
+\begin{document}
+
+\articletype{Paper}
+
+\title{Superconductor-Coated Copper Cavities for Axion Haloscopes: Cavity Architecture, Nb and Nb$_3$Sn Coatings, and Millikelvin RF Performance}
+
+\author{Andre Robert Juliao$^{1*}$ and Lance D Cooley$^{1}$}
+
+\affil{$^1$Applied Superconductivity Center, National High Magnetic Field Laboratory,
+Florida State University, Tallahassee, FL 32310, USA}
+
+\affil{$^*$Author to whom any correspondence should be addressed.}
+
+\email{arj14c@fsu.edu}
+
+\keywords{axion haloscope, superconducting cavity, Nb$_3$Sn, thin films, copper substrate, quality factor, surface resistance, hot-bronze}
+
+\begin{abstract}
+Axion haloscopes scan faster when their resonant cavity has a higher quality factor, but the cavity must hold that quality factor inside a multi-tesla magnet. We report a sequence of \qty{11}{\giga\hertz} copper cavities coated with superconducting films and measured from \qty{50}{\milli\kelvin} to \qty{300}{\kelvin} and from \qty{0}{} to \qty{9}{\tesla}. A hexagonal prism replaced the conventional cylinder because finite-element models place the assembly seams at the hexagon corners, where the surface current is smallest; adding two resistive seams costs a cylinder $\sim$27\% of its quality factor but a hexagon only $\sim$1\%. An eight-piece hexagonal prototype with one Nb$_3$Sn wall confirmed that the film transition measured on coupons ($T_c = \qty{15}{\kelvin}$) reproduces in the cavity, and gave $R_s = \qty{8}{\milli\ohm}$ for that wall against \qty{11}{\milli\ohm} for copper. A two-piece hexagonal cavity fully coated with Nb$_3$Sn by the Cu-Sn route reached a loaded $Q_L = 77{,}000$ at \qty{50}{\milli\kelvin} in a dilution refrigerator; correcting for delaminated endcaps and seam leakage gives $Q_0 \approx 1.4\times10^{5}$. Coating that same copper body with only its Ta/Nb underlayer raised the quality factor to $Q_0 = 1.4\times10^{6}$ at \qty{2}{\kelvin}, twenty-five times what the body gave bare and ten times the corrected Nb$_3$Sn result. \TODO{one sentence on the cylindrical electropolished Cu remeasure} \TODO{one sentence on the cylindrical hot-bronze Nb$_3$Sn cavity} Coating quality, not the intrinsic superconductor, therefore sets the present limit on Nb$_3$Sn cavities built on copper.
+\end{abstract}
+
+% ===========================================================================
+\section{Introduction}
+% ===========================================================================
+
+Axion haloscopes search for axion-to-photon conversion inside a resonant microwave cavity immersed in a strong static magnetic field~\cite{ADMX:2009iij}. The cavity quality factor $Q$ sets the converted signal power and therefore the rate at which a search covers axion mass~\cite{Braine:2024nzi}. ADMX and its peers use copper cavities, which reach $Q \sim 10^5$ at \qty{11}{\giga\hertz} and hold that value to \qty{9}{\tesla} because copper magnetoresistance is weak. A superconducting cavity offers one to two orders of magnitude more $Q$ at zero field. The difficulty is that it must keep that advantage in the \qty{7}{}--\qty{9}{\tesla} fields that ADMX, HAYSTAC, and QUAX already run~\cite{ADMX:2009iij, Braine:2022qal, FirstQUAXGalactic2020}. Reaching $Q = 10^6$ at \qty{9}{\tesla} would halve the four-year runtime of the ADMX extended frequency range search.
+
+Copper is the natural cavity body. It conducts heat well enough to avoid gradients at millikelvin temperatures, it machines and electropolishes into complex shapes, and a bare copper cavity of identical geometry serves as the reference against which any coating is judged. The open question is which superconductor survives on it. Bulk Nb and NbTi both have upper critical fields at or below the operating field of current searches, which rules them out on physics grounds rather than fabrication grounds~\cite{Braine:2022qal}. REBCO tape reaches $Q \sim 3\times10^5$ at \qty{9}{\tesla} but requires delaminating and soldering tape into the cavity~\cite{ahnSuperconductingCavityHigh2020}. Nb$_3$Sn has $T_c = \qty{18.3}{\kelvin}$ and $H_{c2} \approx \qty{30}{\tesla}$, which clears the field requirement with margin~\cite{gurevichUseNotUse2011, ambrosioNb3SnHighField2015}. The mature Nb$_3$Sn cavity route reacts bulk Nb with Sn vapor near \qty{1100}{\degreeCelsius} and reaches $Q_0 \sim 10^{10}$ in accelerators~\cite{Posen:2018zjb}, but that temperature destroys copper. The Cu-Sn ternary bronze route reacts at \qty{650}--\qty{750}{\degreeCelsius} and is copper-compatible~\cite{withanageRapidNbSn2021}; it is the route used here. Fig.~\ref{fig:axionprototypes} places all published prototypes on a common $Q$--$B$ axis.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/OtherAxionDetector/QvsTAxionPrototypesnew.png}
+    \caption{Quality factor versus applied magnetic field for superconducting axion cavity prototypes. Every cavity except Posen's was measured against a copper cavity of the same geometry. The cavities resonate at different frequencies, so points are not directly comparable~\cite{ahnSuperconductingCavityHigh2020, Braine:2024nzi, posenNb3SnSuperconductingRadiofrequency2022, Golm:2021ooj, Alesini:2019ajt}.}
+    \label{fig:axionprototypes}
+\end{figure}
+
+This paper reports the cavities themselves rather than the films. Coupon-scale development of the Cu-Sn route on copper, niobium, and sapphire is reported separately \TODO{cite companion Cu-substrate and Nb-substrate papers}, as is the RF validation of hot-bronze films on flat bronze disks in the SLAC mushroom cavity \TODO{cite companion SLAC paper}. Here we take the down-selected recipes into a cavity and ask what a real resonator does with them. Five cavities are described. Each one isolates a different loss mechanism: seam leakage, copper surface quality, coating coverage on inclined and perpendicular surfaces, and vortex dissipation in applied field. The result that organizes the paper is that the Ta/Nb underlayer alone outperforms the completed Nb$_3$Sn stack by an order of magnitude, which locates the limit in coating uniformity rather than in Nb$_3$Sn itself.
+
+\input{cavity_design}
+
+\input{methods}
+
+% ===========================================================================
+\section{Results}
+% ===========================================================================
+
+\input{results_8piece}
+
+\input{results_2piece_nb3sn}
+
+\input{results_2piece_tanb}
+
+\input{results_cyl_cu}
+
+\input{results_cyl_nb3sn}
+
+\input{discussion}
+
+\input{conclusions}
+
+\ack
+This work was supported in part by a DOE Office of Science Graduate Student Research (SCGSR) fellowship, in collaboration with Dr.\ G.\ Carosi and the LLNL team. Work at the Applied Superconductivity Center was supported by \TODO{funding source}.
+
+\section*{Author contributions}
+A.R.J. designed and built the cavities, fabricated the coatings, performed the RF measurements, and wrote the manuscript. L.D.C. supervised the project and edited the manuscript.
+
+\section*{Data availability statement}
+Data supporting this study are available from the corresponding author upon reasonable request.
+
+\printbibliography
+
+\appendix
+\input{app_q_correction}
+
+\end{document}

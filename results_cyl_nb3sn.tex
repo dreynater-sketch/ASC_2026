@@ -1,0 +1,46 @@
+% ===========================================================================
+\subsection{Cylindrical Nb$_3$Sn cavity: hot-bronze route}\label{sec:cylnb3sn}
+% ===========================================================================
+%
+% STATUS: NOT YET MEASURED. This file is a reserved slot. Every number below is
+% a \TODO{}. Do not compile a submission draft until this file is either filled
+% in or removed from main.tex.
+%
+% Design intent (from the maintainer): same cylindrical body and same surface
+% preparation as Sec.~\ref{sec:cylcu}, now carrying a hot-bronze Nb3Sn coating.
+% The Nb-first + APS-etch route lost both endcaps on the hexagon; hot bronze
+% terminates in Nb3Sn and needs no etch, which removes the step that caused
+% that failure. This is the paired experiment: identical geometry, identical
+% copper, identical measurement chain, coating as the only variable.
+%
+% ===========================================================================
+
+The hexagonal Nb$_3$Sn cavity lost its endcaps to the APS etch, and that single step accounts for one third of its resonating surface reverting to copper. The hot-bronze route removes the step. Nb is sputtered onto a heated Cu-Sn layer and reacts on arrival, so Nb$_3$Sn is the terminal surface and no etch is required~\cite{withanageRapidNbSn2021}. Running that route on the cylindrical body of Sec.~\ref{sec:cylcu}, with the same electropolish and the same assembly, isolates the coating as the only variable between the two measurements.
+
+\TODO{RECIPE: Ta barrier thickness and deposition mode; Cu-Sn composition and thickness; substrate temperature during Nb sputtering; Nb sputter power, pressure, and thickness; whether a post-reaction anneal follows and at what temperature and duration; confirm no etch step}
+
+\TODO{FIXTURING: how the concave cylindrical surface is held over the sources, whether substrate rotation or heating is available for the Cu-Sn step, and whether the endcaps are masked this time}
+
+\TODO{COUPON WITNESS: whether a coupon carried through the identical run was measured by SQUID for $T_c$, as was done for the eight-piece wall (Fig.~\ref{fig:RSandMoment8Piece}). This is the check that the recipe transferred to cavity scale.}
+
+\begin{figure}[htb]
+    \centering
+    \TODO{FIGURE: cylindrical cavity interior after hot-bronze Nb$_3$Sn deposition, with attention to endcap and edge coverage}
+    \caption{Cylindrical copper cavity after hot-bronze Nb$_3$Sn coating. \TODO{compare coverage with the Nb-first hexagon, Fig.~\ref{fig:EdgeEffect2piece}}}
+    \label{fig:cylNb3Sn}
+\end{figure}
+
+\TODO{RESULT: $Q$ versus temperature from \qty{2}{\kelvin} through $T_c$ in the PPMS; state the transition temperature and compare it with the coupon $T_c$}
+
+\TODO{RESULT: $Q$ versus applied field to \qty{9}{\tesla} at \qty{2}{\kelvin}. This is the measurement that matters for the application and the one the eight-piece cavity failed. Report whether $Q$ still falls linearly and whether the superconducting state survives past \qty{8}{\tesla}.}
+
+\TODO{RESULT: millikelvin $Q$ at LLNL, if a slot is available}
+
+\TODO{CORRECTIONS: apply Appendix~\ref{app:Qcorrection} only if coverage is again incomplete. If the hot-bronze route coats the full surface, report the measured $Q$ directly and note that no coverage correction was needed -- that itself is the result.}
+
+\begin{figure}[htb]
+    \centering
+    \TODO{FIGURE: $Q$ versus $B$ at \qty{2}{\kelvin} for the cylindrical hot-bronze cavity, with the eight-piece single-wall curve (Fig.~\ref{fig:8pieceQvsB}) and the copper baseline overlaid}
+    \caption{Quality factor versus applied magnetic field for the cylindrical hot-bronze Nb$_3$Sn cavity at \qty{2}{\kelvin}, compared with the eight-piece single-wall prototype and the copper reference.}
+    \label{fig:cylNb3SnQvsB}
+\end{figure}

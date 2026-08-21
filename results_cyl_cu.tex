@@ -1,0 +1,63 @@
+% ===========================================================================
+\subsection{Cylindrical copper cavity: electropolished baseline}\label{sec:cylcu}
+% ===========================================================================
+%
+% STATUS: NOT YET MEASURED. Reserved slot. The BODY already exists -- it is
+% Braine's cylindrical cavity, third of the three bodies in this work alongside
+% the 8-piece and 2-piece hexagons. Geometry is identical to Braine's, so
+% dimensions should be pulled from his thesis rather than re-derived.
+% What is new here is the surface preparation, not the cavity.
+%
+% EP recipe supplied by the maintainer: 3:2 phosphoric acid : butanol, held at
+% the current plateau, 10-15 min, ~500 rpm agitation, 45 C.
+%
+% ===========================================================================
+
+Every cavity above was limited by its copper before it was limited by its coating. The two-piece hexagon gained \qty{57}{\percent} in cold $Q$ from an etch and a low-temperature anneal alone, and it still fell \qty{28}{\percent} short of its simulated ceiling. The hexagon cannot close that gap. Its acute inner corners do not take a uniform hand polish, and they present non-uniform current density to an electropolishing bath. A cylinder has no corners, so both hand polishing and electropolishing reach every part of the surface.
+
+The third cavity body in this work is therefore Braine's cylindrical cavity, used unmodified~\cite{Braine:2024nzi}. Reusing his geometry rather than designing a new one has two benefits: the copper result is directly comparable with a published measurement on the same shape, and any difference is attributable to surface preparation alone. The trade accepted is the \qty{27}{\percent} seam penalty that the hexagon was introduced to avoid, on the reasoning that \qty{27}{\percent} is smaller than the loss already being paid to surface roughness.
+
+\TODO{Pull the cavity dimensions from Braine's thesis~\cite{Braine:2024nzi} rather than restating them from memory: height, inner diameter, wall thickness, number of pieces, fastener and alignment scheme, antenna port geometry. Known from the present work: \qty{11}{\giga\hertz} TM$_{010}$, outer diameter under \qty{26}{\milli\meter} to clear the PPMS bore.}
+
+\subsubsection{Surface preparation}
+
+The inner surface was mechanically polished and then electropolished. Electropolishing used a 3:2 mixture of phosphoric acid and butanol at \qty{45}{\degreeCelsius}, held at the current plateau for \qty{10}--\qty{15}{\minute} with agitation at approximately \qty{500}{rpm}.
+
+\TODO{Mechanical polish sequence before EP: grits, media, and duration.}
+
+\TODO{EP cell details: cathode material and geometry, plateau voltage and current density, electrolyte volume, and how the plateau was identified (record the polarisation curve if one was taken).}
+
+\TODO{Resulting surface roughness, and how it was measured --- profilometry, AFM, or SEM. This is the number that makes the comparison with the hand-polished hexagon quantitative rather than anecdotal.}
+
+\TODO{Mechanical assembly: seam flatness and closing force. State whether the paper-gap test that the two-piece hexagon failed now passes.}
+
+\begin{figure}[htb]
+    \centering
+    \TODO{PHOTO: cylindrical copper cavity, assembled and opened, showing the electropolished inner surface. A side-by-side with the hand-polished hexagon interior would make the surface-finish argument visually.}
+    \caption{Cylindrical copper cavity, geometry after Ref.~\cite{Braine:2024nzi}, with an electropolished inner surface.}
+    \label{fig:cylCu}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \TODO{PHOTO: electropolishing cell in operation --- cavity half, cathode, stirrer, bath. Optional, but it is the one process step in this paper with no visual record.}
+    \caption{Electropolishing setup for the cylindrical cavity.}
+    \label{fig:epsetup}
+\end{figure}
+
+\subsubsection{Results}
+
+\TODO{RESULT: $Q$ at room temperature, at \qty{4}{\kelvin}, and at \qty{2}{\kelvin}. State $Q_L$ or $Q_0$ and the coupling correction applied.}
+
+\TODO{RESULT: simulated ideal $Q$ for this geometry with RRR-300 copper at the measured resonant frequency, and the fraction of that ideal achieved.}
+
+\TODO{RESULT: $Q$ versus applied field to \qty{9}{\tesla} at \qty{2}{\kelvin}, if taken. Copper should be flat; confirming that closes out magnetoresistance for the reference and matches Braine's observation.}
+
+\TODO{COMPARISON: measured $Q$ against Braine's copper cylinder ($Q = 180{,}000$ at \qty{2}{\kelvin}, \qty{11}{\giga\hertz}, flat to \qty{9}{\tesla}~\cite{Braine:2024nzi}) and against the two-piece hexagon after etch and anneal ($Q = 55{,}000$). Same geometry as Braine means the comparison is clean. If the electropolished cylinder beats the hexagon by more than the \num{1.38} seam factor, surface finish rather than seam leakage was the dominant loss throughout this work.}
+
+\begin{figure}[htb]
+    \centering
+    \TODO{FIGURE: $R_s$ versus temperature for the electropolished cylinder, overlaid on the hexagon curves of Fig.~\ref{fig:CuCavitiesRsvsT} and on the simulated ideal.}
+    \caption{Surface resistance versus temperature for the electropolished cylindrical copper cavity, compared with the hexagonal cavities and with the simulated RRR-300 ideal.}
+    \label{fig:cylCuRsvsT}
+\end{figure}
