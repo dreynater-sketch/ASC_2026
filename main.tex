@@ -6,8 +6,6 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{cite}
-\usepackage{xcolor}
-\newcommand{\TODO}[1]{\textcolor{red}{[TODO: #1]}}
 \graphicspath{{images/}}
 
 \begin{document}
@@ -114,7 +112,14 @@ Fig.~\ref{fig:results} shows the measured surface resistance and unloaded qualit
     \label{fig:results}
 \end{figure*}
 
-At \SI{2}{\kelvin}, the film gives $Q_0=1.64\times10^{6}$ and $R_s=\SI{213}{\micro\ohm}$. Against the measured bare-copper baseline under the matched, unsealed seam condition ($Q_0=55{,}000$, $R_s=\SI{6.36}{\milli\ohm}$), this is an improvement of roughly $30\times$ in quality factor. Sealing that same bare-copper cavity's seam with indium wire raises $Q_0$ to $62{,}000$ ($R_s=\SI{5.65}{\milli\ohm}$), and both measured values sit below the independently simulated bulk-Cu ceiling of $Q_0=77{,}000$. This unsealed-below-sealed-below-simulated ordering is consistent with residual RF leakage through the seam gap described in Section~II, on top of which the simulated value adds the further, currently untested step of applying the same indium seal to the coated cavity. Against the BCS-limited value for niobium at this frequency ($R_s \approx \SI{0.58}{\micro\ohm}$ at \SI{2}{\kelvin}, $Q_0\approx 6.0\times10^{8}$), however, the measured film sits roughly 250 times higher in surface resistance. At millikelvin temperatures the BCS term is exponentially suppressed, so a gap of this size at \SI{2}{\kelvin} is too large to attribute to trapped-flux resistance, which for realistic ambient fields remains a comparatively small contribution~\cite{Ciovati:2014zti}; surface roughness in the as-sputtered film, which locally enhances current path length and field at grain boundaries, is the more likely dominant term, though it has not yet been directly measured on this film \TODO{add a profilometer or AFM roughness scan of the sputtered Nb surface here if available}.
+At \SI{2}{\kelvin}, the film gives $Q_0=1.64\times10^{6}$ and $R_s=\SI{213}{\micro\ohm}$. Against the measured bare-copper baseline under the matched, unsealed seam condition ($Q_0=55{,}000$, $R_s=\SI{6.36}{\milli\ohm}$), this is an improvement of roughly $30\times$ in quality factor. Sealing that same bare-copper cavity's seam with indium wire raises $Q_0$ to $62{,}000$ ($R_s=\SI{5.65}{\milli\ohm}$), and both measured values sit below the independently simulated bulk-Cu ceiling of $Q_0=77{,}000$. This unsealed-below-sealed-below-simulated ordering is consistent with residual RF leakage through the seam gap described in Section~II, on top of which the simulated value adds the further, currently untested step of applying the same indium seal to the coated cavity. Against the BCS-limited value for niobium at this frequency ($R_s \approx \SI{0.58}{\micro\ohm}$ at \SI{2}{\kelvin}, $Q_0\approx 6.0\times10^{8}$), however, the measured film sits roughly 250 times higher in surface resistance. At millikelvin temperatures the BCS term is exponentially suppressed, so a gap of this size at \SI{2}{\kelvin} is too large to attribute to trapped-flux resistance, which for realistic ambient fields remains a comparatively small contribution~\cite{Ciovati:2014zti}; surface roughness in the as-sputtered film, which locally enhances current path length and field at grain boundaries, is the more likely dominant term. Fig.~\ref{fig:roughness} confirms this directly: an optical profilometer scan of the sputtered Nb surface shows a background roughness of roughly $\pm$\SI{2}{\micro\meter} punctuated by scattered grooves reaching \SIrange{-8}{-11}{\micro\meter} along the line scan marked in red, consistent with polishing or handling scratches that locally enhance the RF surface path length and field.
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.95\linewidth]{roughness.png}
+    \caption{Optical profilometer height map of the sputtered Nb surface (top; red line marks the scan location) and the corresponding line-scan height profile (bottom), showing $\pm$\SI{2}{\micro\meter} background roughness with scattered grooves reaching \SIrange{-8}{-11}{\micro\meter}.}
+    \label{fig:roughness}
+\end{figure}
 
 Approaching the transition, $R_s$ rises gradually before increasing sharply near \SI{9.2}{\kelvin}, matching the bulk-Nb critical temperature. Above $T_c$, $Q_0$ falls to order $10^{4}$, below the bare-copper baseline, because normal-state Nb is more resistive than annealed copper and the \SI{700}{\nano\meter} film exceeds its normal-state skin depth at \SI{11}{\giga\hertz}, so the RF fields see only the lossy normal-state Nb and not the copper substrate beneath it. That the transition sits at the bulk-Nb $T_c$, rather than at a suppressed value indicative of Cu interdiffusion, confirms that the \SI{500}{\nano\meter} Ta layer is an effective diffusion barrier and that the sputtered film is close to stoichiometric bulk Nb.
 
