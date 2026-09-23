@@ -23,7 +23,7 @@
 
 \begin{abstract}
 
-Superconducting films coated on 3D cavities can raise the quality factor of a copper haloscope or accelerator cavity by orders of magnitude. There are many different superconducting materials, and many different ways to make them, so a robust and quick method for testing the quality factor of the superconducting film is required. There are currently many ways to test the RF properties of supercondcuting films and here we report the fabrication and 11\,GHz RF characterization of a two-piece hexagonal oxygen-free high-conductivity (OFHC) copper cavity sputter-coated with a \SI{500}{\nano\meter} Ta diffusion barrier and a \SI{700}{\nano\meter} Nb film. The cavity was measured from 2 to \SI{10}{\kelvin} in a Quantum Design Physical Property Measurement System (PPMS), and the unloaded quality factor $Q_0$ was extracted from vector network analyzer $S_{11}$, $S_{22}$, and $S_{21}$ data using a diameter-correction circle-fit for the input and output coupling coefficients. At \SI{2}{\kelvin} the film reached $Q_0 = 1.64\times10^{6}$, corresponding to a surface resistance $R_s = \SI{213}{\micro\ohm}$ for a simulated geometric factor $G=\SI{350}{\ohm}$. This is $\sim$26$\times$ the measured bare-copper baseline of the same body ($Q_0=62{,}000$, $R_s=\SI{5.65}{\milli\ohm}$) and comparable with a simulated bulk-Cu ceiling of $Q_0=77{,}000$ ($R_s=\SI{5.00}{\milli\ohm}$), but roughly 250 times the BCS-limited surface resistance of niobium at this frequency, indicating that surface roughness in the as-sputtered film dominates over the intrinsic BCS term.
+Superconducting films coated on 3D cavities can raise the quality factor of a copper haloscope or accelerator cavity by orders of magnitude. There are many different superconducting materials, and many different ways to make them, so a robust and quick method for testing the quality factor of the superconducting film is required. There are currently many ways to test the RF properties of superconducting films and here we report the fabrication and 11\,GHz RF characterization of a two-piece hexagonal oxygen-free high-conductivity (OFHC) copper cavity sputter-coated with a \SI{500}{\nano\meter} Ta diffusion barrier and a \SI{700}{\nano\meter} Nb film. The cavity was measured from 2 to \SI{10}{\kelvin} in a Quantum Design Physical Property Measurement System (PPMS), and the unloaded quality factor $Q_0$ was extracted from vector network analyzer $S_{11}$, $S_{22}$, and $S_{21}$ data using a diameter-correction circle-fit for the input and output coupling coefficients. For comparison, the bulk Cu cavity was simulated giving $Q_0=77{,}000$ ($R_s=\SI{5.00}{\milli\ohm}$), and measured Cu cavity gave $Q_0=62{,}000$, $R_s=\SI{5.65}{\milli\ohm}$ only off by a factor of 19\% from the ideal. The Ta/Nb coated Cu cavity at \SI{2}{\kelvin} the film reached $Q_0 = 1.64\times10^{6}$, corresponding to a surface resistance $R_s = \SI{213}{\micro\ohm}$ for a simulated geometric factor $G=\SI{350}{\ohm}$. This is roughly 250 times worse then the surface resistance of a comparable niobium cavity at this frequency, indicating that residual resistance dominated. This cavity design allows for pre and post surface analysis to understand what can be improved on future generations for fast optimization thoughput. 
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -71,20 +71,7 @@ giving $Q_0 = 1.64\times10^{6}$ at \SI{2}{\kelvin}.
 
 \begin{figure*}[!t]
     \centering
-    \begin{subfigure}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{qcircle_s11.png}
-        \caption{Drive port, $S_{11}$}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{qcircle_s22.png}
-        \caption{Pickup port, $S_{22}$}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{qcircle_s21.png}
-        \caption{Transmission, $S_{21}$}
-    \end{subfigure}
+    \includegraphics[width=0.95\textwidth]{qcircle.png}
     \caption{Diameter-correction circle fits to the \SI{2}{\kelvin} drive-port (a) and pickup-port (b) reflection data, giving $\beta_1=0.53$ and $\beta_2=0.24$, and the Lorentzian fit to transmission (c) giving $Q_L=929{,}000$. Eq.~\eqref{eq:q0} combines these into $Q_0 = 1.64\times10^{6}$.}
     \label{fig:qcircle}
 \end{figure*}
@@ -115,12 +102,12 @@ Fig.~\ref{fig:results} shows the measured surface resistance and unloaded qualit
 
 At \SI{2}{\kelvin}, the film gives $Q_0=1.64\times10^{6}$ and $R_s=\SI{213}{\micro\ohm}$. Against the measured bare-copper baseline ($Q_0=62{,}000$, $R_s=\SI{5.65}{\milli\ohm}$), this is an improvement of roughly $26\times$ in quality factor, and it is comparable with the independently simulated bulk-Cu ceiling of $Q_0=77{,}000$. A separate finding on the same bare-copper cavity points to an easy path to a higher baseline still: sealing its seam with indium foil raised $Q_0$ from $55,000$ to $62,000$, a simple treatment we plan to apply to the coated cavity in future work. Against the BCS-limited value for niobium at this frequency ($R_s \approx \SI{0.58}{\micro\ohm}$ at \SI{2}{\kelvin}, $Q_0\approx 6.0\times10^{8}$), however, the measured film sits roughly 250 times higher in surface resistance. Surface roughness and uncoated areas of the substrate is the dominant mechanism that reduced our quality factor. Fig.~\ref{fig:roughness} confirms this directly: a Veeco laser-scanning confocal microscope scan of the sputtered Nb surface shows a background roughness of roughly $\pm$\SI{2}{\micro\meter} punctuated by scattered grooves reaching \SIrange{-8}{-11}{\micro\meter} along the line scan marked in red, consistent with polishing scratches that locally disrupted supercondcutivity. For comparison, electropolished Nb-on-Cu films in the literature reach AFM roughness (Ra) of only \SIrange{6}{21}{\nano\meter}~\cite{Pira2019CuPolish}, two to three orders of magnitude below what is measured here.
 
-\begin{figure}[!t]
-    \centering
-    \includegraphics[width=0.95\linewidth]{roughness.png}
-    \caption{Laser-scanning confocal microscope (Veeco) height map of the sputtered Nb surface (top; red line marks the scan location) and the corresponding line-scan height profile (bottom), showing $\pm$\SI{2}{\micro\meter} background roughness with scattered grooves reaching \SIrange{-8}{-11}{\micro\meter}.}
-    \label{fig:roughness}
-\end{figure}
+%\begin{figure}[!t]
+%    \centering
+  %  \includegraphics[width=0.95\linewidth]{roughness.png}
+ %   \caption{Laser-scanning confocal microscope (Veeco) height map of the sputtered Nb surface (top; red line marks the scan location) and the corresponding line-scan height profile (bottom), showing $\pm$\SI{2}{\micro\meter} background roughness with scattered grooves reaching \SIrange{-8}{-11}{\micro\meter}.}
+  %  \label{fig:roughness}
+%\end{figure}
 
 Approaching the transition, $R_s$ rises gradually before increasing sharply near \SI{8.7}{\kelvin}, which is lower than the bulk-Nb critical temperature of \SI{9.2}{\kelvin}. Above $T_c$, $Q_0$ falls to order $10^{4}$, below the bare-copper baseline, because normal-state Nb is more resistive than copper. The transition sitting lower than the bulk-Nb $T_c$ shows that the superconducting film could have been improved, possibly with a thicker layer or HIPIMS.
 
@@ -131,7 +118,8 @@ These results add to the growing pool of literature hoping to characterize the R
 A two-piece hexagonal OFHC copper cavity coated with a sputtered Ta/Nb bilayer was characterized at \SI{11}{\giga\hertz} from 2 to \SI{10}{\kelvin}. Using a diameter-correction circle-fit to extract coupling coefficients from $S_{11}$ and $S_{22}$, the unloaded quality factor at \SI{2}{\kelvin} was found to be $Q_0=1.64\times10^{6}$ ($R_s=\SI{213}{\micro\ohm}$), roughly $26\times$ the cavity's own measured bare-copper baseline and consistent with an independently simulated bulk-Cu ceiling, but approximately 250 times the BCS-limited surface resistance of niobium at this frequency, an excess more consistent with as-sputtered surface roughness than with trapped-flux resistance. Demonstrating this within the \SI{26}{\milli\meter} sample space of a commercial PPMS, rather than a purpose-built haloscope magnet with six times the bore, shows that coatings can be screened without dedicated large-bore infrastructure. This measurement establishes a baseline against which future work on the same platform can be compared with. This design allows for surface analysis of the sputtered film, and full quality factor characterization down to 2K and in high magnetic field with an instrument commonly found in many labs. 
 
 \section*{Acknowledgment}
-This work is supported by the U.S. Department of Energy, Office of Science, Office of High Energy Physics and the Accelerator R\&D and Production (ARDAP) office, under Award No.\ DE-SC0018379 and DE-SC0026206. A portion of this work was performed at the National High Magnetic Field Laboratory, which is supported by the National Science Foundation Cooperative Agreement No.\ DMR-1644779 and the State of Florida.
+This work is supported by the U.S. Department of Energy, Office of Science, Office of High Energy Physics and the Accelerator R\&D and Production (ARDAP) office, under Award No. DE-SC 0018379 and DE-SC0026206. A portion of this work was performed at the National High Magnetic Field Laboratory, which is supported by the National Science Foundation Cooperative Agreement No. DMR-1644779 and the State of Florida.
+
 
 \begin{thebibliography}{9}
 
