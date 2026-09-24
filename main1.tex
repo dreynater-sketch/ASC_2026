@@ -82,12 +82,12 @@ We modeled the cavity geometry in COMSOL to confirm the TM$_{010}$ mode identity
 
 From the TM$_{010}$ eigenmode, we computed the geometric factor from the ratio of stored magnetic energy to the surface integral of the tangential magnetic field, giving $G=\SI{350}{\ohm}$ for this cavity. Combined with a literature bulk-copper conductivity, the same simulation gives a simulated bare-copper ceiling of $Q_0=77{,}000$ (input $R_s = \SI{5.00}{\milli\ohm}$), used in Section~V as a cross-check on the measured copper baseline.
 
-\begin{figure*}[!t]
+\begin{figure}[!t]
     \centering
-    \includegraphics[width=.5\textwidth]{sim_modes.png}
+    \includegraphics[width=0.95\linewidth]{sim_modes.png}
     \caption{Simulated cavity modes showing electric field volume for a) TM$_{010}$ mode and the two nearest higher-order modes, b) TM$_{011}$ and c) TM$_{012}$. This simulation was used to verify the frequency and geometric factor of the mode, as well as calculate the ideal quality factor of the Cu cavity. The color here is used to show how the mode structure looks with electric field being highest with white and lowest with black and is not to be analyzed quantitatively.}
     \label{fig:sim}
-\end{figure*}
+\end{figure}
 
 \section{Results and Discussion}
 
@@ -102,7 +102,7 @@ Fig.~\ref{fig:results} shows the measured surface resistance and unloaded qualit
 
 The measured bare-copper baseline ($Q_0=62{,}000$, $R_s=\SI{5.65}{\milli\ohm}$) is comparable with the independently simulated bulk-Cu ceiling of $Q_0=77{,}000$, confirming that the cavity geometry, fabrication, and measurement method reproduce the expected bulk-Cu performance. Sealing the cavity seam with indium foil raised $Q_0$ from $55,000$ to $62,000$, a simple step we plan to apply to the coated cavity in future work. Against this baseline, the Ta/Nb-coated film reaches $Q_0=1.64\times10^{6}$ and $R_s=\SI{213}{\micro\ohm}$ at \SI{2}{\kelvin}, an improvement of roughly $26\times$. Compared to ideal niobium at this frequency ($R_s \approx \SI{0.58}{\micro\ohm}$ at \SI{2}{\kelvin}, $Q_0\approx 6.0\times10^{8}$), however, our Nb film sits at roughly 250 times higher surface resistance. Surface roughness and uncoated substrate areas are the dominant mechanisms that reduced our quality factor: a Veeco laser-scanning confocal microscope scan of the sputtered Nb surface showed a background roughness of roughly $\pm$\SI{2}{\micro\meter} punctuated by scattered grooves reaching \SIrange{-8}{-11}{\micro\meter}, consistent with polishing scratches that locally disrupted superconductivity. For comparison, electropolished Nb-on-Cu films in the literature reach AFM roughness (Ra) of only \SIrange{6}{21}{\nano\meter}~\cite{Pira2019CuPolish}, two to three orders of magnitude below what is measured here.
 
-Near the superconducting transition, $R_s$ rises gradually before increasing sharply near \SI{8.7}{\kelvin}, slightly below the bulk-Nb critical temperature of \SI{9.2}{\kelvin}. Above $T_c$, $Q_0$ falls to order $10^{4}$. The transition temperature, \SI{.5}{\kelvin} lower than the bulk Nb $T_c$, shows that the superconducting film can be improved, possibly using a thicker layer or HIPIMS.
+Near the superconducting transition, $R_s$ rises gradually before increasing sharply near \SI{8.7}{\kelvin}, slightly below the bulk-Nb critical temperature of \SI{9.2}{\kelvin}. Above $T_c$, $Q_0$ falls to order $10^{4}$. The transition temperature, \SI{.5}{\kelvin} lower than the bulk Nb $T_c$, shows that the superconducting film can be improved, possibly using a thicker layer or HIPIMS~\cite{leithHiPIMSNbCu2023}.
 
 These results add to the growing literature on characterizing the RF properties of superconducting films. We establish a benchmark quality factor with a Nb film. More work is needed to optimize substrate roughness and cavity gap before moving to more complex, higher-$H_{c2}$ coatings such as Nb$_3$Sn.
 
@@ -160,6 +160,9 @@ D.~Kajfez and E.~J.~Hwan, ``Q-factor measurement with network analyzer,'' \emph{
 
 \bibitem{Pira2019CuPolish}
 C.~Pira \emph{et al.}, ``Impact of the Cu substrate surface preparation on the morphological, superconductive and RF properties of the Nb superconductive coatings,'' in \emph{Proc. 19th Int. Conf. RF Superconductivity (SRF2019)}, Dresden, Germany, 2019, pp.~935--940.
+
+\bibitem{leithHiPIMSNbCu2023}
+S.~Leith \emph{et al.}, ``HiPIMS deposition of superconducting Nb thin films onto Cu substrates,'' \emph{Vacuum}, vol.~212, p.~112041, 2023.
 
 \end{thebibliography}
 
