@@ -39,41 +39,47 @@ A fundamental bottleneck, however, is how quickly researchers can evaluate candi
 
 No direct method exists to evaluate structure-processing-performance relationships for SRF surfaces and thin films. Significant efforts in thermometry and destructive post-test coupon cutting from problem areas are state-of-the-art techniques to bridge defects to SRF performance~\cite{knobloch1995thermometry, trenikhinaSRF2013, ciovatiAnlageGurevich2013, posenTrenikhina2017NbSnPerformance, bianchiVenturiniDelsolaro2023, geCooley2011Replica}. Sample-based RF systems, particularly cavity-based systems, are needed to address this problem by exposing relatively small material samples to RF magnetic fields ($B_{RF}$), enabling measurements of $R_s(T, B_{RF}, f)$. Current SRF thin-film material characterization techniques rely on concentrating the RF field onto a flat 2D disc sample: quadrupole resonator (QPR)~\cite{del2018redesign, monroy2019design,ge2026design,zhao2026multiphysics}, mushroom cavities~\cite{nantista2005test,xie2013development,maniscalco2016new}, and choke cavity~\cite{seal2024high}. An alternative approach is to design 3D shapes with split cells, such as the SWELL cavity at CERN~\cite{peaugerSWELL2022} and the 6\,GHz Daresbury split cell~\cite{leicesterSplit6GHz2023}. The cavity reported here follows this general split-cell 3D approach; the inner-wall geometry is generally a cylinder, but here we report results for the two-piece hexagonal prism geometry. The reason and significance of this geometry change will be discussed.
 
-Nb and NbTi have upper critical fields at or below the fields used in present axion searches, which rules them out of a high-field haloscope on physics grounds alone~\cite{gurevichUseNotUse2011}. Nb$_3$Sn, with $T_c \approx \SI{18.3}{\kelvin}$ and $H_{c2}\approx\SI{30}{\tesla}$, is a leading high-field candidate. The standard route, vapor diffusion of Sn into bulk Nb, gives the highest quality factors reported to date~\cite{posenNb3SnSuperconductingRadiofrequency2017}, but is not compatible with a copper substrate; routes under active development on copper instead include Sn-bronze diffusion~\cite{withanageRapidNbSn2021}, stoichiometric-target magnetron sputtering~\cite{fonnesuRecipeOptimizationSRF2025}, and Nb/Sn co-sputtering~\cite{sayeedFabricationSuperconductingNb3Sn2023}. Nb$_3$Sn films are left for future work, as they had poor quality factors ($< 10^5$) at zero magnetic field, so simpler Nb films were measured here as a control experiment. A Nb film and bulk Cu were benchmarked against each other with the same Cu cavity geometry as well as simulated Cu Bulk and Nb films of similar experimental setup (no magnetic field shielding, film not kept in vacuum, etc).
+Nb and NbTi have upper critical fields at or below the fields used in present axion searches, which rules them out of a high-field haloscope on physics grounds alone~\cite{gurevichUseNotUse2011}. Nb$_3$Sn, with $T_c \approx \SI{18.3}{\kelvin}$ and $H_{c2}\approx\SI{30}{\tesla}$, is a leading high-field candidate. The standard route, vapor diffusion of Sn into bulk Nb, gives the highest quality factors reported to date~\cite{posenNb3SnSuperconductingRadiofrequency2017}, but is not compatible with a copper substrate; routes under active development on copper instead include Sn-bronze diffusion~\cite{withanageRapidNbSn2021}, stoichiometric-target magnetron sputtering~\cite{fonnesuRecipeOptimizationSRF2025}, and Nb/Sn co-sputtering~\cite{sayeedFabricationSuperconductingNb3Sn2023}. Nb$_3$Sn films are left for future work, as they had poor quality factors ($< 10^5$) at zero magnetic field, so simpler Nb films were measured here as a control experiment. A Nb film and bulk Cu were benchmarked against each other with the same Cu cavity geometry as well as simulated bulk Cu and Nb films of similar experimental setup (no magnetic field shielding, film not kept in vacuum, etc).
 
-The cavity in this work fit inside the small sample space of a Quantum Design PPMS, constraining its outer dimension to \SI{26}{\milli\meter}, a factor of six smaller compared to other benchmark results~\cite{posen2023HighQ, alesini2019QUAX}. The cylindrical PPMS cavity design was first proposed by Thomas Braine~\cite{Braine:2024nzi}, and iterated into a hexagonal prism design used for this work. This PPMS compatible design allows for rapidly screened the quality factor vs temperature and magnetic field for coatings using a compact, commercially available system.
+The cavity in this work fit inside the small sample space of a Quantum Design PPMS, constraining its outer dimension to \SI{26}{\milli\meter}, a factor of six smaller compared to other benchmark results~\cite{posen2023HighQ, alesini2019QUAX}. The cylindrical PPMS cavity design was first proposed by Thomas Braine~\cite{Braine:2024nzi}, and iterated into a hexagonal prism design used for this work~\cite{juliaoNb3SnThesis2026}. This PPMS-compatible design allows for rapid screening of the quality factor vs temperature and magnetic field for coatings using a compact, commercially available system.
 
-\section{Cavity Design and Fabrication}
 
-The two-piece hexagonal prism cavity is machined from bulk oxygen-free high-conductivity copper, is \SI{72}{\milli\meter} tall with a \SI{12.25}{\milli\meter} inner wall face length and a minimum wall thickness of \SI{2}{\milli\meter}. The two halves close with four hand-tightened stainless screws and three alignment pegs, operating in the TM$_{010}$ mode near \SI{11}{\giga\hertz}. Each half was mechanically polished by hand with 400 to 1200 grit and electropolished in Phosphoric:butanol (3:2) at 45 C with a stir bar at 600 RPM before deposition.
+\section{Electromagnetic Simulation of Cavities}
 
-The RF surface was coated with a \SI{500}{\nano\meter} Ta diffusion barrier by DC magnetron sputtering at \SI{100}{\watt} with a \SI{-100}{\volt} substrate bias in \SI{10}{\milli\torr} Ar at \SI{200}{\celsius}, followed by a \SI{700}{\nano\meter} Nb layer sputtered at \SI{250}{\watt} in \SI{8}{\milli\torr} Ar, also at \SI{200}{\celsius}. After deposition, we hand-polished the mating interface between the two halves to close the seam gap; however, light was still visible when we held the assembled halves up to a light source. Fig.~\ref{fig:cavity} shows the coated cavity halves; the darker Nb film covers the resonating wall, while the interface appears as bare copper due to the post-deposition polish.
+electrical system of cylinderical cavity of same volume as hexagonal cavity
+
+We modeled the cavity geometry in COMSOL to confirm the TM$_{010}$ mode identity and obtain the geometric factor $G$ used to convert measured $Q$ into surface resistance. Fig.~\ref{fig:sim} shows the simulated electric field for the fundamental TM$_{010}$ mode at $f_0=\SI{11.030}{\giga\hertz}$, together with the two nearest higher-order modes, TM$_{011}$ at \SI{11.395}{\giga\hertz} and TM$_{012}$ at \SI{12.399}{\giga\hertz}. Identifying these modes in simulation was necessary to confirm which resonance mode we were tracking.
+
+From the TM$_{010}$ eigenmode, we computed the geometric factor from the ratio of stored magnetic energy to the surface integral of the tangential magnetic field, giving $G=\SI{350}{\ohm}$ for this cavity. Combined with a literature bulk-copper conductivity, the same simulation gives a simulated bare-copper ceiling of $Q_0=77{,}000$ (input $R_s = \SI{5.00}{\milli\ohm}$), used in Section~V as a cross-check on the measured copper baseline.
 
 \begin{figure}[!t]
     \centering
-    \includegraphics[width=0.85\linewidth]{cavity_photo.png}
-    \caption{a) The two-piece hexagonal Cu/Ta/Nb cavity after sputtering the Ta diffusion barrier and Nb film. b) Uncoated Cu found at the joining edge of the hexagon faces.}
-    \label{fig:cavity}
+    \includegraphics[width=0.95\linewidth]{Sim_Cyl_hex.png}
+    \caption{Simulated TM$_{010}$ surface current density $|J|$ A/m for a) the cylinder and b) the hexagon, showing current concentrated at the hexagon face centers and suppressed at the vertical edges, versus the azimuthally uniform current on the cylinder wall. add scale bar}
+    \label{fig:sim}
 \end{figure}
+
+
+\section{Cavity Fabrication and Initial Preparation}
+
+
+The two-piece hexagonal prism cavity is machined from bulk oxygen-free high-conductivity copper, is \SI{72}{\milli\meter} tall with a \SI{12.25}{\milli\meter} inner wall face length and a minimum wall thickness of \SI{2}{\milli\meter}. The two halves close with four hand-tightened stainless screws and three alignment pegs, operating in the TM$_{010}$ mode near \SI{11}{\giga\hertz}. Each half was mechanically polished by hand with 400 to 1200 grit and electropolished in Phosphoric:butanol (3:2) at 45 C with a stir bar at 600 RPM before deposition.
+
+
+\section{Superconducting Thin Film Deposition}
+
+The RF surface was coated with a \SI{500}{\nano\meter} Ta diffusion barrier by DC magnetron sputtering at \SI{100}{\watt} with a \SI{-100}{\volt} substrate bias in \SI{10}{\milli\torr} Ar at \SI{200}{\celsius}, followed by a \SI{700}{\nano\meter} Nb layer sputtered at \SI{250}{\watt} in \SI{8}{\milli\torr} Ar, also at \SI{200}{\celsius}. After deposition, we hand-polished the mating interface between the two halves to close the seam gap; however, light was still visible when we held the assembled halves up to a light source. Fig.~\ref{fig:cavity} shows the coated cavity halves; the darker Nb film covers the resonating wall, while the interface appears as bare copper due to the post-deposition polish.
+
+
 
 % TODO(Andre): paragraph on hexagon-vs-cylinder rationale (PVD flux-angle
 % at the seam + simulated wall-current distribution) goes here.
 
-\begin{figure}[!t]
-    \centering
-    \includegraphics[width=0.85\linewidth]{hex_vs_cyl_flux_current.png}
-    \caption{PLACEHOLDER: a) PVD flux incidence angle at the seam for the vertex-cut hexagon versus a cylinder. b) Simulated TM$_{010}$ wall current density, showing current concentrated at hexagon face centers and suppressed at the hexagon edges, versus the azimuthally uniform current on a cylindrical wall.}
-    \label{fig:hexvcyl}
-\end{figure}
 
-\section{RF Measurement Method}
 
-\begin{figure}[!t]
-    \centering
-    \includegraphics[width=0.85\linewidth]{images/setup.png}
-    \caption{The probe, cavity, PPMS, and VNA are shown here.}
-    \label{fig:setup}
-\end{figure}
+
+\section{RF Measurement Method (cite toms thesis)}
+
 
 The assembled cavity was mounted on an RF probe inside a Quantum Design PPMS, enabling temperature control from 2 to \SI{300}{\kelvin} at fields up to \SI{9}{\tesla}; all data reported here were taken at zero applied field. A Keysight PNA vector network analyzer drove the cavity through one antenna (port 1, $S_{11}$) and read out through a second (port 2, $S_{22}$), with transmission recorded as $S_{21}$. The two-piece geometry allows opening the cavity before and after measurement and deposition. The assembled cavity and probe, as well as the PPMS and VNA screen can be seen in Fig.~\ref{fig:setup}.
 
@@ -89,38 +95,49 @@ Q_0 = Q_L\left(1+\beta_1+\beta_2\right),
 \end{equation}
 giving $Q_0 = 1.64\times10^{6}$ at \SI{2}{\kelvin}.
 
+
+\section{Results}
+
+
 \begin{figure*}[!t]
     \centering
-    \includegraphics[width=0.95\textwidth]{qcircle.png}
-    \caption{Diameter-correction circle fits to the \SI{2}{\kelvin} drive-port (a) and pickup-port (b) reflection data, giving $\beta_1=0.53$ and $\beta_2=0.24$, and the Lorentzian fit to transmission (c) giving $Q_L=929{,}000$. Eq.~\eqref{eq:q0} combines these into $Q_0 = 1.64\times10^{6}$.}
-    \label{fig:qcircle}
+    \includegraphics[width=0.85\textwidth]{images/Roughness1.png}
+    \caption{Linescan across the surface of the Nb film on the hexagonal Cu cavity substrate. remove roughness plot}
+    \label{fig:roughness}
 \end{figure*}
 
-\section{Electromagnetic Simulation}
+measurement of Q 
+quality factor for Cu and nb film
 
-We modeled the cavity geometry in COMSOL to confirm the TM$_{010}$ mode identity and obtain the geometric factor $G$ used to convert measured $Q$ into surface resistance. Fig.~\ref{fig:sim} shows the simulated electric field for the fundamental TM$_{010}$ mode at $f_0=\SI{11.030}{\giga\hertz}$, together with the two nearest higher-order modes, TM$_{011}$ at \SI{11.395}{\giga\hertz} and TM$_{012}$ at \SI{12.399}{\giga\hertz}. Identifying these modes in simulation was necessary to confirm which resonance mode we were tracking.
+em simulations hex vs cylinder
 
-From the TM$_{010}$ eigenmode, we computed the geometric factor from the ratio of stored magnetic energy to the surface integral of the tangential magnetic field, giving $G=\SI{350}{\ohm}$ for this cavity. Combined with a literature bulk-copper conductivity, the same simulation gives a simulated bare-copper ceiling of $Q_0=77{,}000$ (input $R_s = \SI{5.00}{\milli\ohm}$), used in Section~V as a cross-check on the measured copper baseline.
+can do roughness measure ex situ 
+
+line scan of Cu 
+line scan of Nb
+compare each 
+
+limitation of simulation or limiation os film, but point is that i can do characterize after coating, not possible in any srf cavities need coupon cutouts and all other things. 
 
 \begin{figure}[!t]
     \centering
-    \includegraphics[width=0.95\linewidth]{sim_modes.png}
-    \caption{Simulated cavity modes showing electric field volume for a) TM$_{010}$ mode and the two nearest higher-order modes, b) TM$_{011}$ and c) TM$_{012}$. This simulation was used to verify the frequency and geometric factor of the mode, as well as calculate the ideal quality factor of the Cu cavity. The color here is used to show how the mode structure looks with electric field being highest with white and lowest with black and is not to be analyzed quantitatively.}
-    \label{fig:sim}
+    \includegraphics[width=0.85\linewidth]{cavity_photo.png}
+    \caption{a) The two-piece hexagonal Cu/Ta/Nb cavity after sputtering the Ta diffusion barrier and Nb film. b) Uncoated Cu found at the joining edge of the hexagon faces. put boundary around inset and offset it }
+    \label{fig:cavity}
 \end{figure}
 
-\section{Results and Discussion}
+\section{Discussion}
 
 Fig.~\ref{fig:results} shows the measured surface resistance and unloaded quality factor of the Ta/Nb-coated cavity from 2 to \SI{10}{\kelvin} at zero field, obtained from $R_s = G/Q_0$ at each temperature using the circle-fit procedure of Section~III. We overlay three reference curves: the BCS-limited surface resistance of niobium at \SI{11}{\giga\hertz}, the measured bare-copper baseline of the same cavity body, and the simulated bulk-copper ceiling from Section~IV.
 
 \begin{figure*}[!t]
     \centering
-    \includegraphics[width=0.85\textwidth]{rs_q0_vs_T.png}
-    \caption{Measured surface resistance (a) and unloaded quality factor (b) of the Ta/Nb-coated cavity versus temperature at 11\,GHz and zero field, compared against BCS Nb, the measured bare-Cu baseline, and the simulated bulk-Cu ceiling.}
+    \includegraphics[width=0.85\textwidth]{55KCuQ.png}
+    \caption{Measured surface resistance (a) and unloaded quality factor (b) of the Ta/Nb-coated cavity versus temperature at 11\,GHz and zero field, compared against BCS Nb, the measured bare-Cu baseline, and the simulated bulk-Cu ceiling. put G in plot and only use Qulaity factor.}
     \label{fig:results}
 \end{figure*}
 
-The measured bare-copper baseline ($Q_0=55{,}000$, $R_s=\SI{6.36}{\milli\ohm}$) is 28.6\% lower than the simulated bulk-Cu cavity of $Q_0=77{,}000$. On a separate cylindrical comparison cavity, sealing the seam with indium foil raised the bare-Cu $Q_0$ from 55,000 to 62,000, the best bare-Cu result across our cavity geometries to date, and we plan to apply indium sealing to the hexagonal cavity in future work. The measured Ta/Nb-coated Cu cavity reached $Q_0=1.64\times10^{6}$ and $R_s=\SI{213}{\micro\ohm}$ at \SI{2}{\kelvin}. Compared to niobium cavities at this frequency and with no magnetic shielding or vacuum-tight seal after deposition ($R_s \approx \SI{0.58}{\micro\ohm}$ at \SI{2}{\kelvin}, $Q_0\approx 6.0\times10^{8}$) our Nb film is two orders of magnitude lower \cite{leithHiPIMSNbCu2023}. Because we didn't get the Q value we expected from Nb, we went back and looked more carefully and saw the missing Nb on the edges. Thus we don't have to guess why it was a low value, we can see it in an laser-scanning confocal microscope. We have an avenue of probing structure-property relations here in a cost-effective way in a PPMS.
+The measured bare-copper baseline ($Q_0=55{,}000$, $R_s=\SI{6.36}{\milli\ohm}$) is 28.6\% lower than the simulated bulk-Cu cavity of $Q_0=77{,}000$. On a separate cylindrical comparison cavity, sealing the seam with indium foil raised the bare-Cu $Q_0$ from 55,000 to 62,000, the best bare-Cu result across our cavity geometries to date, and we plan to apply indium sealing to the hexagonal cavity in future work. The measured Ta/Nb-coated Cu cavity reached $Q_0=1.64\times10^{6}$ and $R_s=\SI{213}{\micro\ohm}$ at \SI{2}{\kelvin}. Compared to niobium cavities at this frequency and with no magnetic shielding or vacuum-tight seal after deposition ($R_s \approx \SI{0.58}{\micro\ohm}$ at \SI{2}{\kelvin}, $Q_0\approx 6.0\times10^{8}$) our Nb film is two orders of magnitude lower. Because we didn't get the Q value we expected from Nb, we went back and looked more carefully and saw the missing Nb on the edges. Thus we don't have to guess why it was a low value, we can see it in a laser-scanning confocal microscope. We have an avenue of probing structure-property relations here in a cost-effective way in a PPMS.
 
 
 %Surface roughness and uncoated substrate areas are the dominant mechanisms that reduced our quality factor: a Veeco laser-scanning confocal microscope scan of the sputtered Nb surface showed a background roughness of roughly $\pm$\SI{2}{\micro\meter} with grooves reaching \SIrange{-8}{-11}{\micro\meter}, consistent with polishing scratches. For comparison, electropolished Nb-on-Cu films in the literature reach AFM roughness (Ra) of only \SIrange{6}{21}{\nano\meter}~\cite{Pira2019CuPolish}, two to three orders of magnitude below what is measured here.
@@ -134,7 +151,10 @@ These results add to the growing literature on characterizing the RF properties 
 We characterized a two-piece hexagonal OFHC copper cavity and compared it to its simulated ideal, finding it about 28.6\% lower than the ideal. We coated the Cu substrate with a sputtered Ta/Nb bilayer at \SI{11}{\giga\hertz} from 2 to \SI{10}{\kelvin}. The unloaded quality factor of the superconducting film at \SI{2}{\kelvin} was found to be $Q_0=1.64\times10^{6}$ ($R_s=\SI{213}{\micro\ohm}$), roughly $30\times$ better than the cavity's own measured bare-copper baseline. However, we had approximately 250 times the surface resistance of niobium at this frequency (given no extra precaution was taken to reduce flux trapping). Demonstrating this within the small \SI{26}{\milli\meter} bore of a commercial PPMS shows that superconducting thin-film coatings can be screened without dedicated large-bore infrastructure. This measurement establishes a baseline Nb film measurement against which future work with the same design can be compared. This two-piece cavity design allows surface analysis of the sputtered film and quality-factor characterization down to 2K and in high magnetic fields with instruments commonly found in material science labs. 
 
 \section*{Acknowledgment}
-This work is supported by the U.S. Department of Energy, Office of Science, Office of High Energy Physics and the Accelerator R\&D and Production (ARDAP) office, under Award No. DE-SC 0018379 and DE-SC0026206. A portion of this work was performed at the National High Magnetic Field Laboratory, which is supported by the National Science Foundation Cooperative Agreement No. DMR-1644779 and the State of Florida.
+This work is supported by the U.S. Department of Energy, Office of Science, Office of High Energy Physics and the Accelerator R\&D and Production (ARDAP) office, under Award No. DE-SC 0018379 and DE-SC0026206. A portion of this work was performed at the National High Magnetic Field Laboratory, which is supported by the National Science Foundation Cooperative Agreement No. DMR-1644779 and the State of Florida. 
+
+put at begnning with insitutions of all authors
+
 \bibliographystyle{IEEEtran}
 \bibliography{refs}
 \end{document}
