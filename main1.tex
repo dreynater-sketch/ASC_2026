@@ -75,8 +75,8 @@ The RF surface was coated with a \SI{500}{\nano\meter} Ta diffusion barrier by D
 
 
 
-% TODO(Andre): paragraph on hexagon-vs-cylinder rationale (PVD flux-angle
-% at the seam + simulated wall-current distribution) goes here.
+% TODO(Andre): paragraph on PVD flux-angle at the seam goes here
+% (wall-current-distribution rationale is now covered in Section II).
 
 
 
@@ -84,7 +84,7 @@ The RF surface was coated with a \SI{500}{\nano\meter} Ta diffusion barrier by D
 \section{RF Measurement Method}
 
 
-The assembled cavity was mounted on an RF probe inside a Quantum Design PPMS, enabling temperature control from 2 to \SI{300}{\kelvin} at fields up to \SI{9}{\tesla}; all data reported here were taken at zero applied field. A Keysight PNA vector network analyzer drove the cavity through one antenna (port 1, $S_{11}$) and read out through a second (port 2, $S_{22}$), with transmission recorded as $S_{21}$. The two-piece geometry allows opening the cavity before and after measurement and deposition. The assembled cavity and probe, as well as the PPMS and VNA screen can be seen in Fig.~\ref{fig:setup}.
+The assembled cavity was mounted on an RF probe inside a Quantum Design PPMS~\cite{Braine:2024thesis}, enabling temperature control from 2 to \SI{300}{\kelvin} at fields up to \SI{9}{\tesla}; all data reported here were taken at zero applied field. A Keysight PNA vector network analyzer drove the cavity through one antenna (port 1, $S_{11}$) and read out through a second (port 2, $S_{22}$), with transmission recorded as $S_{21}$. The two-piece geometry allows opening the cavity before and after measurement and deposition. The assembled cavity and probe, as well as the PPMS and VNA screen can be seen in Fig.~\ref{fig:setup}.
 
 Because both ports were non-negligibly coupled, $Q_0$ was extracted with the diameter-correction circle-fit method rather than assuming weak coupling~\cite{KajfezHwan1984}. For each port, the measured $S_{ii}$ trace was fit to a circle in the complex plane with center offset $C$ and radius $R$; the coupling coefficient follows from
 \begin{equation}
@@ -103,14 +103,7 @@ giving $Q_0 = 1.64\times10^{6}$ at \SI{2}{\kelvin}.
 
 Surface roughness of the as-deposited Nb film on Cu was measured with a line scan across a \SI{1.2}{\milli\meter} span of the back hexagonal wall, giving an arithmetic mean roughness $R_a = \SI{0.91}{\micro\meter}$, root-mean-square roughness $R_q = \SI{1.43}{\micro\meter}$, and maximum peak-to-valley height $R_z = \SI{9.98}{\micro\meter}$.
 
-The quality factor measurement of the cavity
-
-measurement of Q
-quality factor for Cu and nb film
-
-em simulations hex vs cylinder
-
-can do roughness measure ex situ 
+can do roughness measure ex situ
 
 line scan of Cu 
 line scan of Nb
@@ -136,7 +129,7 @@ Fig.~\ref{fig:results} shows the measured unloaded quality factor of the Ta/Nb-c
     \label{fig:results}
 \end{figure}
 
-The measured bare-copper baseline ($Q_0=55{,}000$, $R_s=\SI{6.67}{\milli\ohm}$) is 28.6\% lower than the simulated bulk-Cu cavity of $Q_0=77{,}000$. On a separate cylindrical comparison cavity, sealing the seam with indium foil raised the bare-Cu $Q_0$ from 55,000 to 62,000, the best bare-Cu result across our cavity geometries to date, and we plan to apply indium sealing to the hexagonal cavity in future work. The measured Ta/Nb-coated Cu cavity reached $Q_0=1.64\times10^{6}$ and $R_s=\SI{224}{\micro\ohm}$ at \SI{2}{\kelvin}. Compared to niobium cavities at this frequency and with no magnetic shielding or vacuum-tight seal after deposition ($R_s \approx \SI{0.58}{\micro\ohm}$ at \SI{2}{\kelvin}, $Q_0\approx 6.0\times10^{8}$) our Nb film is two orders of magnitude lower. Because we didn't get the Q value we expected from Nb, we went back and looked more carefully and saw the missing Nb on the edges. Thus we don't have to guess why it was a low value, we can see it in a laser-scanning confocal microscope. We have an avenue of probing structure-property relations here in a cost-effective way in a PPMS.
+The measured bare-copper baseline ($Q_0=55{,}000$, $R_s=\SI{6.67}{\milli\ohm}$) is 28.6\% lower than the simulated bulk-Cu cavity of $Q_0=77{,}000$. On a separate cylindrical comparison cavity, sealing the seam with indium foil raised the bare-Cu $Q_0$ from 55,000 to 62,000, the best bare-Cu result across our cavity geometries to date, and we plan to apply indium sealing to the hexagonal cavity in future work. The measured Ta/Nb-coated Cu cavity reached $Q_0=1.64\times10^{6}$ and $R_s=\SI{224}{\micro\ohm}$ at \SI{2}{\kelvin}. Compared to niobium cavities at this frequency and with no magnetic shielding or vacuum-tight seal after deposition ($R_s \approx \SI{0.58}{\micro\ohm}$ at \SI{2}{\kelvin}, $Q_0\approx 6.0\times10^{8}$) our Nb film is two orders of magnitude lower. Because we didn't get the Q value we expected from Nb, we went back and looked more carefully and saw the missing Nb on the edges. Thus we don't have to guess why it was a low value, we can see it in a laser-scanning confocal microscope. For comparison, electropolished Nb-on-Cu films in the literature reach AFM roughness ($R_a$) of only \SIrange{6}{21}{\nano\meter}~\cite{Pira2019CuPolish}, roughly two to three orders of magnitude smoother than the $R_a=\SI{0.91}{\micro\meter}$ measured here. We have an avenue of probing structure-property relations here in a cost-effective way in a PPMS.
 
 
 Near the superconducting transition, $R_s$ rises gradually before increasing sharply near \SI{8.7}{\kelvin}, slightly below the bulk-Nb critical temperature of \SI{9.2}{\kelvin}. Above $T_c$, $Q_0$ falls to order $10^{4}$. The transition temperature, \SI{.5}{\kelvin} lower than the bulk Nb $T_c$, shows that the superconducting film can be improved, possibly using a thicker layer or HIPIMS~\cite{leithHiPIMSNbCu2023}.
