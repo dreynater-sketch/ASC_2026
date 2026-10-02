@@ -50,15 +50,14 @@ The cavity in this work fit inside the small sample space of a Quantum Design PP
 
 
 
-We modeled the RF electrical modes of a cylinderical cavity with same volume as the hexagonal cavity used in this study. COMSOL simulations confirmed the TM$_{010}$ mode identity and identified the geometric factor $G$ that can be used to convert measured $Q$ into surface resistance. Fig.~\ref{fig:sim} shows the simulated surface currents for the fundamental TM$_{010}$ mode at $f_0\approx\SI{11}{\giga\hertz}$ for the a) hexagonal and b) cylindrical cavity. The constant color across the cylindrical wall identifies the constant surface current azimuthaly, where as the dark regions along the hexagon edge identify where current reduces. It can be inferred from this simulation that if there are regions of high resistance, and we confine them to the edges of the hexagon, we can lower the current across these high resistance areas and therefore increase quality factor.
+We modeled the cavity geometry in COMSOL to confirm the TM$_{010}$ mode identity and obtain the geometric factor $G$ used to convert measured $Q$ into surface resistance. Fig.~\ref{fig:modes} shows the simulated field for the fundamental TM$_{010}$ mode at $f_0=\SI{11.01}{\giga\hertz}$, together with the two nearest higher-order modes, TM$_{011}$ at \SI{11.37}{\giga\hertz} and TM$_{012}$ at \SI{12.34}{\giga\hertz}. Identifying these modes in simulation was necessary to confirm which resonance mode we were tracking.
 
 \begin{figure}[!t]
     \centering
-    \includegraphics[width=0.95\linewidth]{Sim_Cyl_hex.png}
-    \caption{Simulated TM$_{010}$ surface current density $|J|$ A/m for a) the cylinder and b) the hexagon, showing current concentrated at the hexagon face centers and suppressed at the vertical edges, versus the azimuthally uniform current on the cylinder wall. add scale bar}
-    \label{fig:sim}
+    \includegraphics[width=0.95\linewidth]{sim_modes.png}
+    \caption{Simulated field for the three lowest-order modes of the hexagonal cavity: a) TM$_{010}$ at \SI{11.01}{\giga\hertz}, c) TM$_{011}$ at \SI{11.37}{\giga\hertz}, b) TM$_{012}$ at \SI{12.34}{\giga\hertz}.}
+    \label{fig:modes}
 \end{figure}
-
 
 From the TM$_{010}$ eigenmode, we computed the geometric factor from the ratio of stored magnetic energy to the surface integral of the tangential magnetic field, giving $G=\SI{367}{\ohm}$ for this cavity. Combined with a literature bulk-copper conductivity, the same simulation gives a simulated bare-copper ceiling of $Q_0=77{,}000$ (input $R_s = \SI{5.00}{\milli\ohm}$), used in Section~V as a cross-check on the measured copper baseline.
 
@@ -100,6 +99,15 @@ giving $Q_0 = 1.64\times10^{6}$ at \SI{2}{\kelvin}.
 
 
 \section{Results}
+
+Fig.~\ref{fig:currents} shows the simulated surface currents for the fundamental TM$_{010}$ mode at $f_0\approx\SI{11}{\giga\hertz}$ for the a) hexagonal and b) cylindrical cavity. The constant color across the cylindrical wall identifies the constant surface current azimuthaly, where as the dark regions along the hexagon edge identify where current reduces. It can be inferred from this simulation that if there are regions of high resistance, and we confine them to the edges of the hexagon, we can lower the current across these high resistance areas and therefore increase quality factor.
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.95\linewidth]{Sim_Cyl_hex.png}
+    \caption{Simulated TM$_{010}$ surface current density $|J|$ A/m for a) the cylinder and b) the hexagon, showing current concentrated at the hexagon face centers and suppressed at the vertical edges, versus the azimuthally uniform current on the cylinder wall. add scale bar}
+    \label{fig:currents}
+\end{figure}
 
 Surface roughness of the as-deposited Nb film on Cu was measured with a line scan across a \SI{1.2}{\milli\meter} span of the back hexagonal wall, giving an arithmetic mean roughness $R_a = \SI{0.91}{\micro\meter}$, root-mean-square roughness $R_q = \SI{1.43}{\micro\meter}$, and maximum peak-to-valley height $R_z = \SI{9.98}{\micro\meter}$.
 
