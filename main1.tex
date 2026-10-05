@@ -27,7 +27,7 @@
 
 \begin{abstract}
 
-Superconducting thin-film coatings can raise the quality factor of copper haloscope and accelerator cavities by orders of magnitude. Because many candidate materials and deposition processes exist, fast and reliable ways to measure the RF performance of a film are needed. Here we report the fabrication and \SI{11}{\giga\hertz} RF characterization of a compact two-piece hexagonal oxygen-free high-conductivity (OFHC) copper cavity sputter-coated with a \SI{500}{\nano\meter} Ta diffusion barrier and a \SI{700}{\nano\meter} Nb film. The cavity fits inside a commercial Quantum Design Physical Property Measurement System (PPMS) and was measured from 2 to \SI{10}{\kelvin}; the unloaded quality factor $Q_0$ was extracted from vector network analyzer $S_{11}$, $S_{22}$, and $S_{21}$ data using the antenna coupling coefficients. The bare Cu cavity reached $Q_0=55{,}000$ ($R_s=\SI{6.67}{\milli\ohm}$), constant from 2 to \SI{10}{\kelvin} and within $\sim$20\% of the anomalous-skin-effect limit for Cu at this frequency. The Ta/Nb-coated cavity reached $Q_0 = 1.64\times10^{6}$ at \SI{2}{\kelvin}, a $\sim$30-fold improvement, corresponding to $R_s = \SI{224}{\micro\ohm}$ (using the simulated geometric factor $G=\SI{367}{\ohm}$). This is roughly two orders of magnitude below the $Q_0 \sim 10^{8}$ expected for a bulk Nb cavity at this frequency without magnetic shielding. Opening the cavity after the RF test revealed missing Nb at the edges of the cavity halves and micrometer-scale substrate roughness as the likely $Q$-limiting defects, showing how the two-piece design links an RF result directly to film defects.
+Superconducting thin-film coatings can raise the quality factor of copper haloscope and accelerator cavities by orders of magnitude. Because many candidate materials and deposition processes exist, fast and reliable ways to measure the RF performance of a film are needed. Here we report the fabrication and \SI{11}{\giga\hertz} RF characterization of a compact two-piece hexagonal oxygen-free high-conductivity (OFHC) copper cavity sputter-coated with a \SI{500}{\nano\meter} Ta diffusion barrier and a \SI{700}{\nano\meter} Nb film. The cavity fits inside a commercial Quantum Design Physical Property Measurement System (PPMS) and was measured from 2 to \SI{10}{\kelvin}; the unloaded quality factor $Q_0$ was extracted from vector network analyzer $S_{11}$, $S_{22}$, and $S_{21}$ data using the antenna coupling coefficients. The bare Cu cavity reached $Q_0=55{,}000$ ($R_s=\SI{6.67}{\milli\ohm}$), constant from 2 to \SI{10}{\kelvin} and within $\sim$20\% of the anomalous-skin-effect limit for Cu at this frequency. The Ta/Nb-coated cavity reached $Q_0 = 1.64\times10^{6}$ at \SI{2}{\kelvin}, a $\sim$30-fold improvement, corresponding to $R_s = \SI{224}{\micro\ohm}$ (using the simulated geometric factor $G=\SI{367}{\ohm}$). This is roughly two orders of magnitude below the $Q_0 \sim 10^{8}$ expected for a bulk Nb cavity at this frequency without magnetic shielding. Opening the cavity after the RF test revealed poor Nb coverage at the inner hexagon edges and micrometer-scale substrate roughness as the likely $Q$-limiting defects, showing how the two-piece design links an RF result directly to film defects.
 
 \end{abstract}
 
@@ -62,7 +62,7 @@ The RF surface was coated with a \SI{500}{\nano\meter} Ta diffusion barrier by D
 \begin{figure}[!t]
     \centering
     \includegraphics[width=0.85\linewidth]{cavity_photo.png}
-    \caption{a) The two-piece hexagonal Cu/Ta/Nb cavity after sputtering the Ta diffusion barrier and Nb film. b) Uncoated Cu found at the joining edge of the hexagon faces.}
+    \caption{a) The two-piece hexagonal Cu/Ta/Nb cavity after sputtering the Ta diffusion barrier and Nb film. b) Uncoated Cu at an inner edge where adjacent hexagon faces meet.}
     % TODO (SB): put boundary around inset and offset it
     \label{fig:cavity}
 \end{figure}
@@ -93,7 +93,7 @@ We modeled the cavity geometry in COMSOL to confirm the TM$_{010}$ mode identity
     \label{fig:modes}
 \end{figure}
 
-From the TM$_{010}$ eigenmode, we computed the geometric factor from the ratio of stored magnetic energy to the surface integral of the tangential magnetic field, giving $G=\SI{367}{\ohm}$ for this cavity. Combined with a literature bulk-copper conductivity, the same simulation gives a simulated bare-copper ceiling of $Q_0=77{,}000$ (input $R_s = \SI{5.00}{\milli\ohm}$), used in Section~\ref{sec:Qfactor} as a cross-check on the measured copper baseline.
+From the TM$_{010}$ eigenmode, we computed the geometric factor from the ratio of stored magnetic energy to the surface integral of the tangential magnetic field, giving $G=\SI{367}{\ohm}$ for this cavity. Combined with a literature bulk-copper conductivity, the same simulation gives a simulated bare-copper ceiling of $Q_0=73{,}000$ (input $R_s = \SI{5.00}{\milli\ohm}$), used in Section~\ref{sec:Qfactor} as a cross-check on the measured copper baseline.
 % Hexagon-vs-cylinder surface-current comparison removed per SB (no matching experiment); figure kept in images/Sim_Cyl_hex.png.
 
 \subsection{Quality Factor Measurements}
@@ -110,20 +110,20 @@ giving $Q_0 = 1.64\times10^{6}$ at \SI{2}{\kelvin}. The same procedure was appli
 \caption{Unloaded quality factor and surface resistance at \SI{2}{\kelvin} ($G=\SI{367}{\ohm}$).}
 \label{tab:Q}
 \centering
-\begin{tabular}{lccccc}
+\begin{tabular}{lcc}
 \hline
- & $\beta_1$ & $\beta_2$ & $Q_L$ & $Q_0$ & $R_s$ \\
+ & $Q_0$ & $R_s$ \\
 \hline
-Simulated bare Cu & -- & -- & -- & $7.7\times10^{4}$ & \SI{5.00}{\milli\ohm}$^a$ \\
-Measured bare Cu & \textcolor{red}{TBD} & \textcolor{red}{TBD} & \textcolor{red}{TBD} & $5.5\times10^{4}$ & \SI{6.67}{\milli\ohm} \\
-Measured Ta/Nb film & 0.53 & 0.24 & $9.29\times10^{5}$ & $1.64\times10^{6}$ & \SI{224}{\micro\ohm} \\
-Bulk Nb, unshielded$^b$ & -- & -- & -- & $\sim10^{8}$ & 1--4\,\si{\micro\ohm} \\
+Simulated bare Cu & $7.3\times10^{4}$ & \SI{5.00}{\milli\ohm}$^a$ \\
+Measured bare Cu & $5.5\times10^{4}$ & \SI{6.67}{\milli\ohm} \\
+Measured Ta/Nb film & $1.64\times10^{6}$ & \SI{224}{\micro\ohm} \\
+Bulk Nb, unshielded$^b$ & $\sim10^{8}$ & 1--4\,\si{\micro\ohm} \\
 \hline
-\multicolumn{6}{l}{\footnotesize $^a$Simulation input. $^b$Estimate; see text.}
+\multicolumn{3}{l}{\footnotesize $^a$Simulation input. $^b$Estimate; see text.}
 \end{tabular}
 \end{table}
 
-The measured bare-Cu baseline ($Q_0=55{,}000$, $R_s=\SI{6.67}{\milli\ohm}$) is 29\% below the simulated $Q_0=77{,}000$, but close to the physical limit for cold copper. At \SI{11}{\giga\hertz} and cryogenic temperature the electron mean free path in OFHC Cu ($\sim$\SI{4}{\micro\meter} for RRR\,$\approx$\,100) is far longer than the skin depth, so the surface resistance saturates in the anomalous-skin-effect regime at $R_s \approx \SI{5.6}{\milli\ohm}$ for diffuse surface scattering ($Q_0\approx66{,}000$), independent of purity~\cite{reuterSondheimer1948, chambers1952, Braine:2024thesis}. The measured $R_s$ lies within $\sim$20\% of this floor, consistent with $Q_0$ being constant from 2 to \SI{10}{\kelvin}; the simulation input of \SI{5.00}{\milli\ohm} sits slightly below it. On a separate, similarly electropolished cylindrical cavity, sealing the seam with indium foil raised the bare-Cu $Q_0$ from 55,000 to 62,000, showing that seam leakage is measurable even for copper.
+The measured bare-Cu baseline ($Q_0=55{,}000$, $R_s=\SI{6.67}{\milli\ohm}$) is 25\% below the simulated $Q_0=73{,}000$, but close to the physical limit for cold copper. At \SI{11}{\giga\hertz} and cryogenic temperature the electron mean free path in OFHC Cu ($\sim$\SI{4}{\micro\meter} for RRR\,$\approx$\,100) is far longer than the skin depth, so the surface resistance saturates in the anomalous-skin-effect regime at $R_s \approx \SI{5.6}{\milli\ohm}$ for diffuse surface scattering ($Q_0\approx66{,}000$), independent of purity~\cite{reuterSondheimer1948, chambers1952, Braine:2024thesis}. The measured $R_s$ lies within $\sim$20\% of this floor, consistent with $Q_0$ being constant from 2 to \SI{10}{\kelvin}; the simulation input of \SI{5.00}{\milli\ohm} sits slightly below it. On a separate, similarly electropolished cylindrical cavity, sealing the seam with indium foil raised the bare-Cu $Q_0$ from 55,000 to 62,000, showing that seam leakage is measurable even for copper.
 
 The Ta/Nb-coated cavity reached $Q_0=1.64\times10^{6}$ ($R_s=\SI{224}{\micro\ohm}$) at \SI{2}{\kelvin}, about 30 times the bare-Cu value. For comparison, a bulk Nb cavity at \SI{11}{\giga\hertz} and \SI{2}{\kelvin} without magnetic shielding would be expected to reach $R_s \approx$ 1--4\,\si{\micro\ohm} ($Q_0 \sim 10^{8}$). In this estimate, the BCS surface resistance, scaled approximately as $f^2$ from measurements at \SI{1.3}{\giga\hertz}~\cite{padamseeRFSuperconductivity2008}, and the resistance from fully trapped ambient flux ($\sim$0.5\,G) contribute comparably, since at this frequency the trapped-flux sensitivity of Nb approaches its frequency-independent flux-flow value of a few n$\Omega$/mG~\cite{checchinFrequencyDependence2018}. The film is therefore roughly two orders of magnitude worse than an equivalent unshielded bulk Nb cavity.
 
@@ -135,18 +135,18 @@ The Ta/Nb-coated cavity reached $Q_0=1.64\times10^{6}$ ($R_s=\SI{224}{\micro\ohm
 %\end{figure}
 % TODO (ARJ): regenerate Quality.png without the BCS curve (or with the unshielded-Nb band) before re-enabling.
 
-$Q_0$ drops sharply near \SI{8.7}{\kelvin}, about \SI{0.5}{\kelvin} below the bulk-Nb $T_c$, and falls to order $10^{4}$ above it. Post-test laser-scanning confocal microscopy of the opened cavity showed Nb missing along the edges of the hexagon faces where the two halves meet (Fig.~\ref{fig:cavity}b). A \SI{1.2}{\milli\meter} line scan of the back wall gave $R_a = \SI{0.91}{\micro\meter}$, $R_q = \SI{1.43}{\micro\meter}$, and $R_z = \SI{9.98}{\micro\meter}$, more than ten times the film thickness.
+$Q_0$ drops sharply near \SI{8.7}{\kelvin}, about \SI{0.5}{\kelvin} below the bulk-Nb $T_c$, and falls to order $10^{4}$ above it. Post-test laser-scanning confocal microscopy of the opened cavity showed thin or missing Nb along the inner edges where adjacent hexagon faces meet (Fig.~\ref{fig:cavity}b). A \SI{1.2}{\milli\meter} line scan of the back wall gave $R_a = \SI{0.91}{\micro\meter}$, $R_q = \SI{1.43}{\micro\meter}$, and $R_z = \SI{9.98}{\micro\meter}$, more than ten times the film thickness.
 
 \section{Discussion}
 \label{sec:discussion}
 
 \subsection{Origin of the Low $Q_0$}
 
-Several mechanisms can account for the gap between the measured film and bulk Nb. The most direct is exposed copper. Because bare Cu has $R_s$ about 30 times higher than the measured film, uncoated Cu covering only $\sim$3\% of the $|H|^2$-weighted wall area would by itself produce the measured \SI{224}{\micro\ohm}, so the missing Nb at the edges found in the post-test inspection is a plausible dominant loss. Substrate roughness compounds this: grooves up to \SI{10}{\micro\meter} deep cannot be conformally covered by a \SI{700}{\nano\meter} film, whereas electropolished Cu substrates for Nb films reach $R_a$ of \SIrange{6}{21}{\nano\meter}~\cite{Pira2019CuPolish}. The suppressed $T_c$ shows that the film itself can also be improved, for example with a thicker layer or HiPIMS~\cite{leithHiPIMSNbCu2023}. Finally, RF leakage through the seam, where light was still visible after assembly, and flux trapped from ambient or remanent PPMS magnet fields add losses that a superconducting film exposes far more than copper.
+Several mechanisms can account for the gap between the measured film and bulk Nb. The most direct is exposed copper. Because bare Cu has $R_s$ about 30 times higher than the measured film, uncoated Cu covering only $\sim$3\% of the $|H|^2$-weighted wall area would by itself produce the measured \SI{224}{\micro\ohm}. The wall current is reduced near the hexagon edges, so the physical area involved can be larger, but the poorly coated edges found in the post-test inspection remain a plausible major loss. Substrate roughness compounds this: grooves up to \SI{10}{\micro\meter} deep cannot be conformally covered by a \SI{700}{\nano\meter} film, whereas electropolished Cu substrates for Nb films reach $R_a$ of \SIrange{6}{21}{\nano\meter}~\cite{Pira2019CuPolish}. The suppressed $T_c$ shows that the film itself can also be improved, for example with a thicker layer or HiPIMS~\cite{leithHiPIMSNbCu2023}. Finally, RF leakage through the seam, where light was still visible after assembly, and flux trapped from ambient or remanent PPMS magnet fields add losses that a superconducting film exposes far more than copper.
 
-\subsection{Film Adhesion at Edges}
+\subsection{Coating Coverage at the Inner Edges}
 
-The missing Nb is concentrated at the edges of the cavity halves, where the film terminates at the mating faces. A free film edge is a natural site for delamination: the sputtered film carries intrinsic stress from deposition, and on cooldown from the \SI{200}{\celsius} deposition temperature to \SI{2}{\kelvin} the larger thermal contraction of Cu than of Nb or Ta places the film under a compressive mismatch strain of roughly 0.3\%, which concentrates at edges and corners. Hand-polishing the mating faces after deposition may also have mechanically lifted the film at these edges. A free edge at the seam is inherent to any split-cell design, so this is a real limitation, but it can be mitigated by rounding the edges, finishing the mating faces before deposition, and adding an adhesion layer such as Ti.
+The inspection showed no sign of film debonding; instead, the Nb is thin or absent where the underlying Cu surface is worst, at the inner edges where adjacent hexagon faces meet. These sharp internal corners are the hardest regions to polish by hand and are recessed during electropolishing, so they retain the deepest machining marks, which line-of-sight sputtering then shadows. Sharp internal edges are thus a limitation of the hexagonal geometry for substrate preparation, which can be addressed by machining a fillet radius into the inner edges, improving the as-machined finish, and depositing at multiple angles. The mating interface between the halves, by contrast, was polished only to reduce the seam gap.
 
 \subsection{Limitations of the Design}
 
@@ -159,7 +159,7 @@ Despite these limitations, the cavity works as a test bed. Any deposition proces
 \section{Conclusion}
 \label{sec:conclusion}
 
-We have developed a compact \SI{11}{\giga\hertz} two-piece cavity that enables quality-factor evaluation of superconducting films deposited on curved Cu surfaces in a widely available PPMS with a \SI{26}{\milli\meter} sample chamber. The bare Cu cavity reached $Q_0=55{,}000$, within $\sim$20\% of the anomalous-skin-effect limit for copper. Our initial Ta/Nb film on Cu reached $Q_0=1.64\times10^{6}$ at \SI{2}{\kelvin}, 30 times the bare-Cu value but roughly two orders of magnitude below an unshielded bulk Nb cavity. The compact design enables post-mortem evaluation of the RF-tested film with standard optical, electron, and X-ray techniques, which here revealed two major $Q$-limiting defects: substrate roughness ($R_a=\SI{0.91}{\micro\meter}$, grooves up to \SI{10}{\micro\meter}) and missing Nb at the edges of the cavity halves. The main limitations are air exposure during assembly and sealing the seam without adding loss.
+We have developed a compact \SI{11}{\giga\hertz} two-piece cavity that enables quality-factor evaluation of superconducting films deposited on curved Cu surfaces in a widely available PPMS with a \SI{26}{\milli\meter} sample chamber. The bare Cu cavity reached $Q_0=55{,}000$, within $\sim$20\% of the anomalous-skin-effect limit for copper. Our initial Ta/Nb film on Cu reached $Q_0=1.64\times10^{6}$ at \SI{2}{\kelvin}, 30 times the bare-Cu value but roughly two orders of magnitude below an unshielded bulk Nb cavity. The compact design enables post-mortem evaluation of the RF-tested film with standard optical, electron, and X-ray techniques, which here revealed two major $Q$-limiting defects: substrate roughness ($R_a=\SI{0.91}{\micro\meter}$, grooves up to \SI{10}{\micro\meter}) and poor Nb coverage at the inner hexagon edges. The main limitations are air exposure during assembly and sealing the seam without adding loss.
 
 \bibliographystyle{IEEEtran}
 \bibliography{refs}
