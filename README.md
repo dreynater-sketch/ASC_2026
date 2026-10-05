@@ -2,8 +2,9 @@
 
 4-page IEEE-format paper for the 2026 Applied Superconductivity Conference, covering
 RF characterization of a sputtered Nb-coated (Cu/Ta/Nb) two-piece hexagonal copper
-cavity at 11 GHz, benchmarked against bulk copper (measured and simulated) and the
-BCS-limited surface resistance of niobium.
+cavity at 11 GHz, benchmarked against bulk copper (measured and simulated), the
+BCS-limited surface resistance of niobium, and the estimated performance of a
+comparable unshielded bulk-Nb cavity (Rs ~ 1-4 uOhm, Q0 ~ 1e8).
 
 Built from `ASC2026_Poster_final.pptx`. Scoped to that poster's content only — the
 full multi-cavity journal manuscript (Nb₃Sn, 8-piece, and cylindrical-cavity results)
