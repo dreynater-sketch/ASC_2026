@@ -27,7 +27,8 @@
 
 \begin{abstract}
 
-Superconducting films coated on 3D cavities can raise the quality factor of a copper haloscope or accelerator cavity by orders of magnitude. Many superconducting materials and fabrication methods exist, so a robust, rapid method for testing the quality factor of a superconducting film is needed. There are currently many ways to test the RF properties of superconducting films, and here we report the fabrication and 11\,GHz RF characterization of a two-piece hexagonal oxygen-free high-conductivity (OFHC) copper cavity sputter-coated with a \SI{500}{\nano\meter} Ta diffusion barrier and a \SI{700}{\nano\meter} Nb film. The cavity was measured from 2 to \SI{10}{\kelvin} in a Quantum Design Physical Property Measurement System (PPMS), and the unloaded quality factor $Q_0$ was extracted from vector network analyzer $S_{11}$, $S_{22}$, and $S_{21}$ data using a diameter-correction circle fit for the input and output coupling coefficients. For comparison, the bulk Cu cavity was simulated giving $Q_0=77{,}000$ (input $R_s=\SI{5.00}{\milli\ohm}$), and the measured Cu cavity gave $Q_0=55{,}000$, $R_s=\SI{6.67}{\milli\ohm}$, 28.6\% below the simulated ideal. The Ta/Nb-coated Cu cavity reached $Q_0 = 1.64\times10^{6}$ at \SI{2}{\kelvin}, corresponding to a surface resistance $R_s = \SI{224}{\micro\ohm}$ (using the simulated geometric factor $G=\SI{367}{\ohm}$). This is roughly two orders of magnitude lower than the quality factor of a comparable niobium cavity at this frequency. This cavity design allowed for pre- and post-deposition surface analysis to help us identify improvements for future iterations. 
+Superconducting films coated on 3D cavities can raise the quality factor of a copper haloscope or accelerator cavity by orders of magnitude. Many superconducting materials and fabrication methods exist, so rapid and robust methods for testing the quality factor of a superconducting film are needed. There are many ways to test the RF properties of superconducting films, and here we report the fabrication and 11\,GHz RF characterization of a two-piece hexagonal oxygen-free high-conductivity (OFHC) copper cavity sputter-coated with a \SI{500}{\nano\meter} Ta diffusion barrier and a superconducting \SI{700}{\nano\meter} Nb film. The cavity was measured from 2 to \SI{10}{\kelvin} in a Quantum Design Physical Property Measurement System (PPMS), and the unloaded quality factor $Q_0$ was extracted from vector network analyzer $S_{11}$, $S_{22}$, and $S_{21}$ data using the antenna coupling coefficients. Rapid Q measurements with standard lab equipment allows for fast recipe iteration. First, the bare Cu cavity was simulated giving $Q_0=77{,}000$ (input $R_s=\SI{5.00}{\milli\ohm}$), and the Cu cavity was measured giving $Q_0=55{,}000$, $R_s=\SI{6.67}{\milli\ohm}$, $\sim$29\% below the simulated ideal. The Ta/Nb-coated Cu cavity reached $Q_0 = 1.64\times10^{6}$ at \SI{2}{\kelvin}, corresponding to a surface resistance $R_s = \SI{224}{\micro\ohm}$ (using the simulated geometric factor $G=\SI{367}{\ohm}$). This is roughly two orders of magnitude lower than the quality factor of a comparable niobium cavity at this frequency. The advantage of this cavity design allows us to pre- and post-deposition surface analyze to help us identify improvements for future iterations. 
+
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -49,38 +50,25 @@ The cavity in this work fit inside the small sample space of a Quantum Design PP
 The hexagonal geometry was chosen to test the prediction, from the simulated surface-current distribution of Section~\ref{sec:simulation}, that confining the unavoidable seam between the two cavity halves to a region of suppressed current should reduce its contribution to the total loss. We previously built an eight-piece hexagonal cavity (six wall sections and two endcaps) toward this same goal, but the larger number of RF seams introduced more leak paths than it resolved~\cite{juliaoNb3SnThesis2026}.
 
 
-\section{Electromagnetic Simulation of Cavities}
-\label{sec:simulation}
-
-
-
-We modeled the cavity geometry in COMSOL to confirm the TM$_{010}$ mode identity and obtain the geometric factor $G$ used to convert measured $Q$ into surface resistance. Fig.~\ref{fig:modes} shows the simulated field for the fundamental TM$_{010}$ mode at $f_0=\SI{11.01}{\giga\hertz}$, together with the two nearest higher-order modes, TM$_{011}$ at \SI{11.37}{\giga\hertz} and TM$_{012}$ at \SI{12.34}{\giga\hertz}. Identifying these modes in simulation was necessary to confirm which resonance mode we were tracking.
-
-\begin{figure}[!t]
-    \centering
-    \includegraphics[width=0.95\linewidth]{sim_modes.png}
-    \caption{Simulated field for the three lowest-order modes of the hexagonal cavity: a) TM$_{010}$ at \SI{11.01}{\giga\hertz}, c) TM$_{011}$ at \SI{11.37}{\giga\hertz}, b) TM$_{012}$ at \SI{12.34}{\giga\hertz}.}
-    \label{fig:modes}
-\end{figure}
-
-From the TM$_{010}$ eigenmode, we computed the geometric factor from the ratio of stored magnetic energy to the surface integral of the tangential magnetic field, giving $G=\SI{367}{\ohm}$ for this cavity. Combined with a literature bulk-copper conductivity, the same simulation gives a simulated bare-copper ceiling of $Q_0=77{,}000$ (input $R_s = \SI{5.00}{\milli\ohm}$), used in Section~\ref{sec:discussion} as a cross-check on the measured copper baseline.
-
-
-\section{Cavity Fabrication and Initial Preparation}
+\section{Methods}
+\subsection{Cavity Fabrication and Initial Preparation}
 \label{sec:fabrication}
 
 
 The two-piece hexagonal prism cavity is machined from bulk oxygen-free high-conductivity copper, is \SI{72}{\milli\meter} tall with a \SI{12.25}{\milli\meter} inner wall face length and a minimum wall thickness of \SI{2}{\milli\meter}. The two halves close with four hand-tightened stainless screws and three alignment pegs, operating in the TM$_{010}$ mode near \SI{11}{\giga\hertz}. Each half was mechanically polished by hand with 400 to 1200 grit and electropolished in Phosphoric:butanol (3:2) at 45 C with a stir bar at 600 RPM before deposition.
 
-
-\section{Superconducting Thin Film Deposition}
+\subsection{Superconducting Thin Film Deposition}
 \label{sec:deposition}
 
 The RF surface was coated with a \SI{500}{\nano\meter} Ta diffusion barrier by DC magnetron sputtering at \SI{100}{\watt} with a \SI{-100}{\volt} substrate bias in \SI{10}{\milli\torr} Ar at \SI{200}{\celsius}, followed by a \SI{700}{\nano\meter} Nb layer sputtered at \SI{250}{\watt} in \SI{8}{\milli\torr} Ar, also at \SI{200}{\celsius}. After deposition, we hand-polished the mating interface between the two halves to close the seam gap; however, light was still visible when we held the assembled halves up to a light source. Fig.~\ref{fig:cavity} shows the coated cavity halves; the darker Nb film covers the resonating wall, while the interface appears as bare copper due to the post-deposition polish.
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.85\linewidth]{cavity_photo.png}
+    \caption{a) The two-piece hexagonal Cu/Ta/Nb cavity after sputtering the Ta diffusion barrier and Nb film. b) Uncoated Cu found at the joining edge of the hexagon faces. put boundary around inset and offset it }
+    \label{fig:cavity}
+\end{figure}
 
-
-
-\section{RF Measurement}
+\subsection{RF Measurement Setup}
 \label{sec:measurement}
 
 
@@ -92,56 +80,81 @@ d = \frac{2R}{|\Gamma_\text{off}|}, \qquad \beta = \frac{d}{2-d}, \qquad |\Gamma
 \label{eq:beta}
 \end{equation}
 
-
-
 \section{Results}
-\label{sec:results}
+\subsection{Electromagnetic Simulation of Cavities}
+\label{sec:simulation}
+
+We modeled the cavity geometry in COMSOL to confirm the TM$_{010}$ mode identity and obtain the geometric factor $G$ used to convert measured $Q$ into surface resistance. Fig.~\ref{fig:modes} shows the simulated field for the fundamental TM$_{010}$ mode at $f_0=\SI{11.01}{\giga\hertz}$, together with the two nearest higher-order modes, TM$_{011}$ at \SI{11.37}{\giga\hertz} and TM$_{012}$ at \SI{12.34}{\giga\hertz}. Identifying these modes in simulation was necessary to confirm which resonance mode we were tracking.
 
 \begin{figure}[!t]
     \centering
-    \includegraphics[width=\linewidth]{images/Quality.png}
-    \caption{Measured unloaded quality factor the Ta/Nb-coated cavity versus temperature at 11\,GHz and zero field, compared against BCS Nb, the measured bare-Cu baseline, and the simulated bulk-Cu ceiling.}
-    \label{fig:results}
+    \includegraphics[width=0.95\linewidth]{sim_modes.png}
+    \caption{Simulated field for the three lowest-order modes of the hexagonal cavity: a) TM$_{010}$ at \SI{11.01}{\giga\hertz}, c) TM$_{011}$ at \SI{11.37}{\giga\hertz}, b) TM$_{012}$ at \SI{12.34}{\giga\hertz}.\textcolor{red}{I do not understand the scale on the right}}
+    \label{fig:modes}
 \end{figure}
 
+From the TM$_{010}$ eigenmode, we computed the geometric factor from the ratio of stored magnetic energy to the surface integral of the tangential magnetic field, giving $G=\SI{367}{\ohm}$ for this cavity. Combined with a literature bulk-copper conductivity, the same simulation gives a simulated bare-copper ceiling of $Q_0=77{,}000$ (input $R_s = \SI{5.00}{\milli\ohm}$), used in Section~\ref{sec:Qfactor} as a cross-check on the measured copper baseline.
+\textcolor{red}{Is this section, and Figure needed.  
+Fig.~\ref{fig:currents} shows the simulated surface currents for the fundamental TM$_{010}$ mode at $f_0\approx\SI{11}{\giga\hertz}$ for the a) hexagonal and b) cylindrical cavities. The constant color across the cylindrical wall identifies the constant surface current azimuthaly, where as the dark regions along the hexagon edge identify where current reduces. It can be inferred from this simulation that if there are regions of high resistance, and we confine them to the edges of the hexagon, we can lower the current across these high resistance areas and therefore increase quality factor.}
+
+%\begin{figure}[!t]
+  %  \centering
+ %   \includegraphics[width=0.95\linewidth]{Sim_Cyl_hex.png}
+%    \caption{Simulated TM$_{010}$ surface current density $|J|$ A/m for a) the cylinder and b) the hexagon, showing current concentrated at the hexagon face centers and suppressed at the vertical edges, versus the azimuthally uniform current on the cylinder wall. add scale bar}
+%    \label{fig:currents}
+%\end{figure}
+
+
+
+\subsection{Quality factor measurements}
+
+Q factor of cu cavity is close to theotrical limit
+
+table with the 4 different Qs that im looking at, 
+
+\label{sec:Qfactor}
+
+Fig.~\ref{fig:results} shows the measured unloaded quality factor of the Ta/Nb-coated cavity from 2 to \SI{10}{\kelvin} at zero field, using the circle-fit procedure of Section~\ref{sec:measurement}. We overlay three reference curves: the BCS-limited surface resistance of niobium at \SI{11}{\giga\hertz}, the measured bare-copper baseline of the same cavity body, and the simulated bulk-copper ceiling from Section~\ref{sec:simulation}.
+The measured bare-copper baseline ($Q_0=55{,}000$, $R_s=\SI{6.67}{\milli\ohm}$) is 28.6\% lower than the simulated bulk-Cu cavity of $Q_0=77{,}000$. On a separate, similarly electropolished cylindrical comparison cavity, sealing the seam with indium foil raised the bare-Cu $Q_0$ from 55,000 to 62,000, the best bare-Cu result across our cavity geometries to date, and we plan to apply indium sealing to the hexagonal cavity in future work. The measured Ta/Nb-coated Cu cavity reached $Q_0=1.64\times10^{6}$ and $R_s=\SI{224}{\micro\ohm}$ at \SI{2}{\kelvin}. Compared to niobium cavities at this frequency and with no magnetic shielding or vacuum-tight seal after deposition ($R_s \approx \SI{0.58}{\micro\ohm}$ at \SI{2}{\kelvin}, $Q_0\approx 6.0\times10^{8}$) our Nb film is two orders of magnitude lower.\textcolor{red}{Add reference}.
+\textcolor{red}{Good idea to add measurements in a table; Here  $\beta_1, and \beta_2$, $Q_L$ for Cu, and Nb cavity, $Q_0$ at 2K makes sense }
+\textcolor{red}{
 The antenna coupling was found to be $\beta_1 = 0.53$ at the drive port and $\beta_2 = 0.24$ at the pickup port. The loaded quality factor was obtained from a Lorentzian fit to the normalized transmission $|S_{21}|^2$, using the 3\,dB bandwidth $\Delta f$ about the resonant frequency $f_0$: $Q_L = f_0/\Delta f = 929{,}000$. The unloaded quality factor then follows from
 \begin{equation}
 Q_0 = Q_L\left(1+\beta_1+\beta_2\right),
 \label{eq:q0}
 \end{equation}
 giving $Q_0 = 1.64\times10^{6}$ at \SI{2}{\kelvin}.
+}
 
-Fig.~\ref{fig:currents} shows the simulated surface currents for the fundamental TM$_{010}$ mode at $f_0\approx\SI{11}{\giga\hertz}$ for the a) hexagonal and b) cylindrical cavities. The constant color across the cylindrical wall identifies the constant surface current azimuthaly, where as the dark regions along the hexagon edge identify where current reduces. It can be inferred from this simulation that if there are regions of high resistance, and we confine them to the edges of the hexagon, we can lower the current across these high resistance areas and therefore increase quality factor. This potential geometric benefit has not yet been confirmed by direct experiment, as a cylindrical cavity of matched volume and seam structure has not been measured against the hexagonal cavity reported here.
-
-\begin{figure}[!t]
-    \centering
-    \includegraphics[width=0.95\linewidth]{Sim_Cyl_hex.png}
-    \caption{Simulated TM$_{010}$ surface current density $|J|$ A/m for a) the cylinder and b) the hexagon, showing current concentrated at the hexagon face centers and suppressed at the vertical edges, versus the azimuthally uniform current on the cylinder wall. add scale bar}
-    \label{fig:currents}
-\end{figure}
-
-Surface roughness of the as-deposited Nb film on Cu was measured with a line scan across a \SI{1.2}{\milli\meter} span of the back hexagonal wall, giving an arithmetic mean roughness $R_a = \SI{0.91}{\micro\meter}$, root-mean-square roughness $R_q = \SI{1.43}{\micro\meter}$, and maximum peak-to-valley height $R_z = \SI{9.98}{\micro\meter}$.
+%\begin{figure}[!t]
+ %   \centering
+ %   \includegraphics[width=\linewidth]{images/Quality.png}
+ %   \caption{Measured unloaded quality factor the Ta/Nb-coated cavity versus temperature at 11\,GHz and zero field, compared against BCS Nb, the measured bare-Cu baseline, and the simulated bulk-Cu ceiling.}
+ %   \label{fig:results}
+%\end{figure}
 
 
-\begin{figure}[!t]
-    \centering
-    \includegraphics[width=0.85\linewidth]{cavity_photo.png}
-    \caption{a) The two-piece hexagonal Cu/Ta/Nb cavity after sputtering the Ta diffusion barrier and Nb film. b) Uncoated Cu found at the joining edge of the hexagon faces. put boundary around inset and offset it }
-    \label{fig:cavity}
-\end{figure}
+\section{Results}
+\label{sec:results}
+
+
+
+
+
+ This potential geometric benefit has not yet been confirmed by direct experiment, as a cylindrical cavity of matched volume and seam structure has not been measured against the hexagonal cavity reported here.
+
 
 \section{Discussion}
 \label{sec:discussion}
 
-Fig.~\ref{fig:results} shows the measured unloaded quality factor of the Ta/Nb-coated cavity from 2 to \SI{10}{\kelvin} at zero field, using the circle-fit procedure of Section~\ref{sec:measurement}. We overlay three reference curves: the BCS-limited surface resistance of niobium at \SI{11}{\giga\hertz}, the measured bare-copper baseline of the same cavity body, and the simulated bulk-copper ceiling from Section~\ref{sec:simulation}.
+Better processing and setup will get us to $10^8$, but this is a problem right now.
 
+The initial results presented here on the 11GHz hexagonal cavity provide data and direction for further improvements.
+ In addition, surface roughness of the Nb film can reduce the quality factor. For the hexagonal cavity, surface roughness of the as-deposited Nb film on Cu was measured with a line scan across a \SI{1.2}{\milli\meter} span of the back hexagonal wall, giving an arithmetic mean roughness $R_a = \SI{0.91}{\micro\meter}$, root-mean-square roughness $R_q = \SI{1.43}{\micro\meter}$, and maximum peak-to-valley height $R_z = \SI{9.98}{\micro\meter}$.
 
+A key capability of this split-cell design is that it enables post-measurement analysis of the cavity surface using traditional material characterization tools, directly on the actual tested surface rather than on a sacrificial coupon; conventional SRF thin-film characterization instead relies on thermometry mapping or destructive post-test coupon cutting from problem areas to link defects to performance. Due to the low $Q_0$ value measured, we inspected the cavity post-testing via laser-scanning confocal microscopy and observed missing Nb on the edges of the cavity wall (Figure 4b).   We did not recoat the cavity to cover the identified gaps for this measurement; doing so, and simply reassembling and retesting, is a natural next step made easy by the split-cell design.
 
-The measured bare-copper baseline ($Q_0=55{,}000$, $R_s=\SI{6.67}{\milli\ohm}$) is 28.6\% lower than the simulated bulk-Cu cavity of $Q_0=77{,}000$. On a separate, similarly electropolished cylindrical comparison cavity, sealing the seam with indium foil raised the bare-Cu $Q_0$ from 55,000 to 62,000, the best bare-Cu result across our cavity geometries to date, and we plan to apply indium sealing to the hexagonal cavity in future work. The measured Ta/Nb-coated Cu cavity reached $Q_0=1.64\times10^{6}$ and $R_s=\SI{224}{\micro\ohm}$ at \SI{2}{\kelvin}. Compared to niobium cavities at this frequency and with no magnetic shielding or vacuum-tight seal after deposition ($R_s \approx \SI{0.58}{\micro\ohm}$ at \SI{2}{\kelvin}, $Q_0\approx 6.0\times10^{8}$) our Nb film is two orders of magnitude lower.
-
-Because we didn't get the Q value we expected from Nb, we went back and looked more carefully and saw the missing Nb on the edges. Thus we don't have to guess why it was a low value, we can see it in a laser-scanning confocal microscope. A key capability of this split-cell design is that it enables post-measurement analysis of the cavity surface using traditional material characterization tools, directly on the actual tested surface rather than on a sacrificed coupon: conventional SRF thin-film characterization instead relies on thermometry mapping or destructive post-test coupon cutting from problem areas to link defects to performance. We did not recoat the cavity to cover the identified gaps for this measurement; doing so, and simply reassembling and retesting, is a natural next step made easy by the split-cell design.
-
-We attribute the shortfall to three related causes at the Cu/Nb interface: residual leakage at the seam between the two cavity halves, patches of uncoated bare Cu, and roughness of the Nb film itself, which is itself a consequence of the incomplete coverage near the uncoated Cu rather than an imperfect Nb film. Because Cu's surface resistance is orders of magnitude higher than that of the Nb film and these regions are macroscopic rather than point-like, their location matters, which is why we placed the unavoidable half-shell interface gap at the current-suppressed hexagon edge rather than on a uniformly-current cylindrical wall, as discussed in Results. For comparison, electropolished Nb-on-Cu films in the literature reach AFM roughness ($R_a$) of only \SIrange{6}{21}{\nano\meter}~\cite{Pira2019CuPolish}, roughly two to three orders of magnitude smoother than the $R_a=\SI{0.91}{\micro\meter}$ measured here.
+We attribute the low $Q_0$ measured compared to simulations to three sources: residual leakage at the seam between the two cavity halves, patches of uncoated bare Cu, and roughness of the Cu substrate. Because Cu's surface resistance is orders of magnitude higher than that of the  superconducting Nb film and these regions are macroscopic rather than point-like, their location matters, which is why we placed the unavoidable half-shell interface gap at the current-suppressed hexagon edge rather than on a uniformly-current cylindrical wall, as discussed in Results. For comparison, electropolished Nb-on-Cu films in the literature reach AFM roughness ($R_a$) of only \SIrange{6}{21}{\nano\meter}~\cite{Pira2019CuPolish}, roughly two to three orders of magnitude smoother than the $R_a=\SI{0.91}{\micro\meter}$ measured here.
 
 Near the superconducting transition, $R_s$ rises gradually before increasing sharply near \SI{8.7}{\kelvin}, slightly below the bulk-Nb critical temperature of \SI{9.2}{\kelvin}. Above $T_c$, $Q_0$ falls to order $10^{4}$. The transition temperature, \SI{.5}{\kelvin} lower than the bulk Nb $T_c$, shows that the superconducting film can be improved, possibly using a thicker layer or HIPIMS~\cite{leithHiPIMSNbCu2023}.
 
@@ -151,6 +164,8 @@ These results add to the growing literature on characterizing the RF properties 
 
 \section{Conclusion}
 \label{sec:conclusion}
+
+Track process variables, rather then guessing, split cell advantage.
 
 We characterized a two-piece hexagonal OFHC copper cavity and compared it to its simulated ideal, finding it about 28.6\% lower than the ideal. We coated the Cu substrate with a sputtered Ta/Nb bilayer at \SI{11}{\giga\hertz} from 2 to \SI{10}{\kelvin}. The unloaded quality factor of the superconducting film at \SI{2}{\kelvin} was found to be $Q_0=1.64\times10^{6}$ ($R_s=\SI{224}{\micro\ohm}$), roughly $30\times$ better than the cavity's own measured bare-copper baseline. However, we had approximately 386 times the surface resistance of niobium at this frequency (given no extra precaution was taken to reduce flux trapping). Demonstrating this within the small \SI{26}{\milli\meter} bore of a commercial PPMS shows that superconducting thin-film coatings can be screened without dedicated large-bore infrastructure. This measurement establishes a baseline Nb film measurement against which future work with the same design can be compared. This two-piece cavity design allows surface analysis of the sputtered film and quality-factor characterization down to 2K and in high magnetic fields with instruments commonly found in material science labs. 
 
