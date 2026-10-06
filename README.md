@@ -1,25 +1,35 @@
-# ASC 2026 Conference Paper
+# ASC 2026 Paper
 
-4-page IEEE-format paper for the 2026 Applied Superconductivity Conference, covering
-RF characterization of a sputtered Nb-coated (Cu/Ta/Nb) two-piece hexagonal copper
-cavity at 11 GHz, benchmarked against bulk copper (measured and simulated), the
-BCS-limited surface resistance of niobium, and the estimated performance of a
-comparable unshielded bulk-Nb cavity (Rs ~ 1-4 uOhm, Q0 ~ 1e8).
+"A Compact 11 GHz Split Cavity for Rapid RF Evaluation of Superconducting Films in a
+Standard PPMS" — IEEE Transactions on Applied Superconductivity, ASC 2026 special issue
+(presentation 1MPo2D-06).
 
-Built from `ASC2026_Poster_final.pptx`. Scoped to that poster's content only — the
-full multi-cavity journal manuscript (Nb₃Sn, 8-piece, and cylindrical-cavity results)
-lives separately in [`ASC_Cavity_Paper`](https://github.com/dreynater-sketch/ASC_Cavity_Paper).
+## Files
+
+| File | Purpose |
+|---|---|
+| `main.tex` | Manuscript |
+| `refs.bib` | References |
+| `IEEEtran.cls` | IEEE class, V1.8b (current IEEE Transactions template) |
+| `IEEEtran.bst` | IEEE bibliography style, 1.14 |
+| `cavity_photo.png`, `sim_modes.png`, `Quality.png` | Figures (flattened, no alpha) |
+| `cover_letter.tex` / `.pdf` | Cover letter |
+
+The layout is flat (no subfolders) and `main.tex` follows the ScholarOne LaTeX guide:
+`%&pdflatex` first line, figures referenced without extension, no siunitx/hyperref
+(siunitx is broken on the IEEE submission server).
 
 ## Build
 
 ```
 pdflatex main.tex
+bibtex main
+pdflatex main.tex
 pdflatex main.tex
 ```
 
-Plain `thebibliography` — no biber/biblatex step needed.
+## ScholarOne upload
 
-## Before submitting
-
-- [ ] Verify the Kajfez & Hwan (1984) citation's exact volume/page
-- [ ] Confirm author emails/affiliations for all five authors
+ScholarOne does not run BibTeX, so upload the generated `.bbl` with the same base name
+as the `.tex` (e.g. `main.tex` + `main.bbl`), plus `refs.bib`, `IEEEtran.cls`,
+`IEEEtran.bst`, and the three PNGs, all as TeX/LaTeX Suppl Files.
