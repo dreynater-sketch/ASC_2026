@@ -2,13 +2,26 @@
 \IEEEoverridecommandlockouts
 \usepackage{amsmath}
 \usepackage{cite}
-\usepackage{siunitx}
-\DeclareSIUnit{\torr}{Torr}
+% Minimal unit macros (replacing siunitx, which is broken on the IEEE submission server)
+\newcommand{\SI}[2]{\ensuremath{#1\,\text{#2}}}
+\newcommand{\si}[1]{\ensuremath{\text{#1}}}
+\newcommand{\SIrange}[3]{\ensuremath{#1\text{--}#2\,\text{#3}}}
+\newcommand{\kelvin}{K}
+\newcommand{\tesla}{T}
+\newcommand{\meter}{m}
+\newcommand{\hertz}{Hz}
+\newcommand{\watt}{W}
+\newcommand{\volt}{V}
+\newcommand{\torr}{Torr}
+\newcommand{\ohm}{\ensuremath{\Omega}}
+\newcommand{\celsius}{\ensuremath{^{\circ}}C}
+\newcommand{\giga}{G}
+\newcommand{\milli}{m}
+\newcommand{\micro}{\textmu}
+\newcommand{\nano}{n}
 \usepackage{graphicx}
 \usepackage{placeins}
-\usepackage{comment}
 \usepackage[utf8]{inputenc}
-\usepackage[hidelinks]{hyperref}
 \graphicspath{{images/}}
 
 \begin{document}
@@ -142,7 +155,7 @@ As shown in Fig.~\ref{fig:results}, $Q_0$ drops sharply near \SI{8.7}{\kelvin}, 
 \section{Discussion}
 \label{sec:discussion}
 
-\subsection{Origin of the Low \texorpdfstring{$Q_0$}{Q0}}
+\subsection{Origin of the Low $Q_0$}
 
 The most direct explanation for the degraded quality factor of the Nb film compared to ideal bulk Nb is the exposed Cu on the inside edges of the cavity. The measured \SI{230}{\micro\ohm} is only $\sim$3\% of the \SI{6.7}{\milli\ohm} of bare Cu, so if bare Cu replaced Nb on just $\sim$3\% of the wall, weighted by local RF current, it alone would account for the measured loss. The hexagon edge regions affect the quality factor less because the current is weaker near the hexagon edges, but the poorly coated edges remain a plausible high-resistance region. Substrate roughness compounds this: grooves up to \SI{10}{\micro\meter} deep cannot be conformally covered by a \SI{700}{\nano\meter} film, whereas electropolished Cu substrates for Nb films can reach $R_a$ of \SIrange{6}{21}{\nano\meter}~\cite{Pira2019CuPolish}. The suppressed $T_c$ shows the film itself can also be improved, e.g., by HiPIMS~\cite{leithHiPIMSNbCu2023}. Finally, RF leakage at the interface between half-shells, where light was still visible after assembly, adds loss that can dominate a superconducting thin-film measurement. Trapped flux is not a main loss: below 1\,Oe remanent field it adds at most a few \si{\micro\ohm}.
 
