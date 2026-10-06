@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{comment}
 \usepackage[utf8]{inputenc}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[hidelinks]{hyperref}
 \graphicspath{{images/}}
 
 \begin{document}
@@ -15,18 +15,20 @@
 \title{A Compact 11 GHz Split Cavity for Rapid RF Evaluation of Superconducting Films in a Standard PPMS}
 
 \author{Andre~R.~Juliao,~Andre~Quintero,~Mehrdad~Kiani,~Lance~Cooley,~and~Shreyas~Balachandran%
-\thanks{Manuscript submitted for review to the 2026 Applied Superconductivity Conference.}%
-\thanks{This work was supported in part by the U.S. Department of Energy, Office of Science, Office of High Energy Physics and the Accelerator R\&D and Production (ARDAP) office, under Award No. DE-SC 0018379 and DE-SC0026206, and in part by the National High Magnetic Field Laboratory, which is supported by the National Science Foundation Cooperative Agreement No. DMR-1644779 and the State of Florida.}%
+\thanks{Manuscript receipt and acceptance dates will be inserted here. This work was supported in part by the U.S. Department of Energy, Office of Science, Office of High Energy Physics and the Accelerator R\&D and Production (ARDAP) office, under Award No. DE-SC 0018379 and DE-SC0026206, and in part by the National High Magnetic Field Laboratory, which is supported by the National Science Foundation Cooperative Agreement No. DMR-1644779 and the State of Florida. \emph{(Corresponding author: Andre~R.~Juliao.)}}%
 \thanks{A.~R.~Juliao and S.~Balachandran are with the Department of Mechanical and Aerospace Engineering, FAMU-FSU College of Engineering, Tallahassee, FL 32310 USA (e-mail: arj14c@fsu.edu, sbalachandran@fsu.edu).}%
 \thanks{A.~Quintero and L.~Cooley are with the National High Magnetic Field Laboratory, Tallahassee, FL 32310 USA.}%
 \thanks{M.~Kiani and S.~Balachandran are with the Department of Materials Science and Engineering, FAMU-FSU College of Engineering, Tallahassee, FL 32310 USA.}%
 }
 
+\markboth{IEEE Transactions on Applied Superconductivity}%
+{Juliao \MakeLowercase{\textit{et al.}}: A Compact 11 GHz Split Cavity for Rapid RF Evaluation of Superconducting Films}
+
 \maketitle
 
 \begin{abstract}
 
-Superconducting thin-film coatings on copper accelerator structures offer a direct route to compact, high-performance, low-cost superconducting radio-frequency (SRF) cavities. This makes the technology attractive for compact commercial accelerators that require 1–10 MeV beams. Final device performance depends on many coupled variables, including the choice of superconductor, the deposition method and substrate preparation. Exploring this multi-variable space efficiently requires techniques that evaluate an SRF surface quickly and against quantitative metrics. Here we measure the temperature-dependent quality factor, $Q_0(T)$, of a compact hexagonal copper cavity before and after deposition of a Nb thin film, using the 26 mm bore of a standard Physical Property Measurement System (PPMS). The cavity's split geometry allows the film surface to be characterised after RF testing. This directly links process variables to film structure, properties and RF performance. The approach applies to several classes of superconductors. Together, the cavity design, post-measurement surface analysis and fast RF testing in a standard laboratory instrument enable rapid development iteration.
+Superconducting thin-film coatings on copper accelerator structures offer a direct route to compact, high-performance, low-cost superconducting radio-frequency (SRF) cavities. This makes the technology attractive for compact commercial accelerators that require 1–10 MeV beams. Final device performance depends on many coupled variables, including the choice of superconductor, the deposition method and substrate preparation. Exploring this multi-variable space efficiently requires techniques that evaluate an SRF surface quickly and against quantitative metrics. Here we measure the temperature-dependent quality factor, $Q_0(T)$, of a compact hexagonal copper cavity before and after deposition of a Nb thin film, using the 26 mm bore of a standard Physical Property Measurement System (PPMS). The cavity's split geometry allows the film surface to be characterized after RF testing. This directly links process variables to film structure, properties and RF performance. The approach applies to several classes of superconductors. Together, the cavity design, post-measurement surface analysis and fast RF testing in a standard laboratory instrument enable rapid development iteration.
 
 \end{abstract}
 
@@ -36,7 +38,7 @@ Niobium thin films, superconducting cavities, quality factor, surface resistance
 
 \section{Introduction}
 \label{sec:intro}
-Developing next-generation superconducting radio-frequency (SRF) cavities beyond high-purity Nb for higher-temperature $\sim$4 K operations increasingly depends on engineered surfaces and thin-film superconductors that can exceed the performance and cost limits of conventional bulk niobium~\cite{valenteFelicianoReview2016}. Candidate technologies include Nb$_3$Sn on Cu, Nb/Cu, multilayer superconducting structures, and other high-$T_c$ or high-superheating-field materials~\cite{valenteFelicianoReview2016, posen2023HighQ}. Because many of these materials cannot be fabricated as bulk cavities, thin-film deposition onto Nb or Cu substrates offers an attractive pathway to higher operating temperatures, reduces cryogenic demand, and potentially improves RF performance.
+\IEEEPARstart{D}{eveloping} next-generation superconducting radio-frequency (SRF) cavities beyond high-purity Nb for higher-temperature $\sim$4 K operations increasingly depends on engineered surfaces and thin-film superconductors that can exceed the performance and cost limits of conventional bulk niobium~\cite{valenteFelicianoReview2016}. Candidate technologies include Nb$_3$Sn on Cu, Nb/Cu, multilayer superconducting structures, and other high-$T_c$ or high-superheating-field materials~\cite{valenteFelicianoReview2016, posen2023HighQ}. Because many of these materials cannot be fabricated as bulk cavities, thin-film deposition onto Nb or Cu substrates offers an attractive pathway to higher operating temperatures, reduces cryogenic demand, and potentially improves RF performance.
 
 A fundamental bottleneck, however, is how quickly researchers can evaluate candidate materials and deposition processes under realistic RF conditions. Thin-film development for SRF cavities involves a large, multidimensional processing space, including deposition technique, substrate condition, deposition temperature, film thickness, composition, microstructure, interface quality, heat treatment, surface processing, and, importantly, deposition on 3D cavity shapes. Conventional material characterization techniques such as XRD, SEM, transport measurements, magnetometry, and DC susceptibility provide essential superconducting material information but cannot directly determine the RF surface resistance $R_{s}$, field-dependent losses, or RF-induced degradation that ultimately governs SRF cavity performance.  Consequently, RF testing remains an indispensable bridge between materials development and cavity implementation.
 
@@ -153,9 +155,9 @@ Currently, the  halves are assembled in air, so air- or moisture-sensitive super
 \section{Conclusion}
 \label{sec:conclusion}
 
-We have developed a compact \SI{11}{\giga\hertz} two-piece cavity that enables quality-factor, and $R_s (T)$ evaluation of superconducting films deposited on curved Cu surfaces in a widely available PPMS with a \SI{26}{\milli\meter} sample chamber. We deposited a Nb film on a Cu cavity and evaluated the deposited film after the RF measurement. 
+We have developed a compact \SI{11}{\giga\hertz} two-piece cavity that enables quality-factor and $R_s(T)$ evaluation of superconducting films deposited on curved Cu surfaces in a widely available PPMS with a \SI{26}{\milli\meter} sample chamber. We deposited a Nb film on a Cu cavity and evaluated the deposited film after the RF measurement. 
 This technique enables a faster process and surface and substrate development cycle for superconducting films. 
-The two- piece compact split- cell cavity enables correlative post- measurement material characterization which enables structure performance property relationships of a SRF surface layer. 
+The two-piece compact split-cell cavity enables correlative post-measurement material characterization, which establishes structure--property--performance relationships of an SRF surface layer. 
 
 
 \bibliographystyle{IEEEtran}
